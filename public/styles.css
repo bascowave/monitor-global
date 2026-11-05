@@ -40,6 +40,12 @@ main { max-width: 880px; margin: 0 auto; padding: 24px 20px 48px; }
 .marker.media { fill: #F0A24B; }
 .marker.baixa { fill: var(--info); }
 .maphint { color: var(--muted-2); font-size: 11px; margin: 6px 0 0; }
+.legend { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin: 10px 0 0; padding: 10px 14px; background: var(--surface); border: 1px solid var(--border); border-radius: 12px; color: var(--muted); font-size: 12px; }
+.legend .sw { display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin-right: 4px; vertical-align: middle; }
+.legend .sw.alta { background: var(--alert); }
+.legend .sw.media { background: #F0A24B; }
+.legend .sw.baixa { background: var(--info); }
+.legend .sep { display: inline-block; width: 1px; height: 14px; background: var(--border); margin: 0 4px; }
 .sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
 .notice, footer { color: var(--muted-2); font-size: 11px; }
 footer { margin-top: 32px; }

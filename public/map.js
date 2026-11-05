@@ -1,6 +1,7 @@
 // Mapa-múndi em SVG (projeção equiretangular). Sem dependências.
 const W = 1000;
 const H = 500;
+const SVGNS = 'http://www.w3.org/2000/svg';
 
 const project = ([lon, lat]) => [((lon + 180) / 360) * W, ((90 - lat) / 180) * H];
 
@@ -16,15 +17,28 @@ function geometryToPath(geom) {
   return polys.map((poly) => poly.map(ringToPath).join('')).join('');
 }
 
-const SVGNS = 'http://www.w3.org/2000/svg';
+// Brilho para os pontos (estilo do exemplo).
+export function addDefs(svg) {
+  const defs = document.createElementNS(SVGNS, 'defs');
+  defs.innerHTML = `
+    <filter id="glow" x="-200%" y="-200%" width="500%" height="500%">
+      <feGaussianBlur stdDeviation="6" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>`;
+  svg.appendChild(defs);
+}
 
-export function drawCountries(svg, geojson) {
+// fillFor(nome) -> cor CSS. Padrão: fundo neutro.
+export function drawCountries(svg, geojson, fillFor = () => null) {
   const g = document.createElementNS(SVGNS, 'g');
   g.setAttribute('class', 'countries');
   for (const f of geojson.features) {
+    const name = f.properties?.NAME || '';
     const p = document.createElementNS(SVGNS, 'path');
     p.setAttribute('d', geometryToPath(f.geometry));
-    p.setAttribute('data-name', f.properties?.NAME || '');
+    p.setAttribute('data-name', name);
+    const fill = fillFor(name);
+    if (fill) p.setAttribute('style', `fill:${fill}`);
     g.appendChild(p);
   }
   svg.appendChild(g);
@@ -34,6 +48,7 @@ export function drawCountries(svg, geojson) {
 export function drawMarkers(svg, markers) {
   const g = document.createElementNS(SVGNS, 'g');
   g.setAttribute('class', 'markers');
+  g.setAttribute('filter', 'url(#glow)');
   for (const m of markers) {
     const [x, y] = project([m.lon, m.lat]);
     const c = document.createElementNS(SVGNS, 'circle');
@@ -48,6 +63,14 @@ export function drawMarkers(svg, markers) {
     g.appendChild(c);
   }
   svg.appendChild(g);
+}
+
+// Escala de cor pelo número de apagões por país (0 = fundo neutro).
+export function heatColor(count, max) {
+  if (!count || !max) return null;
+  const t = Math.min(1, count / max);
+  const a = 0.25 + 0.6 * t;
+  return `rgba(241, 66, 66, ${a.toFixed(2)})`;
 }
 
 export { W, H, project };

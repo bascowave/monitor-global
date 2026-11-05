@@ -1,10 +1,16 @@
-import { drawCountries, drawMarkers } from './map.js';
+import { addDefs, drawCountries, drawMarkers, heatColor } from './map.js';
 
 const T = {
   pt: { brand: 'Monitor global', eyebrow: 'Atualizado a partir das fontes oficiais', title: 'Incidentes no mundo, com fonte e data', mapTitle: 'Mapa de apagões', mapHint: 'Pontos = apagões com localização informada pela fonte. Cor = gravidade; tamanho = clientes afetados. Ciberataques não têm local e aparecem só na lista.', mapEmpty: 'Nenhum apagão com localização ainda. Fontes de apagões pendentes.', tabAll: 'Tudo', tabCyber: 'Ciberataques', tabPower: 'Apagões', footer: 'Cada item mostra a fonte original. Itens "a confirmar" ainda não foram verificados por fonte oficial.', kind: { cyber: 'Ciberataque', power: 'Apagão' }, st: { confirmado: 'confirmado', a_confirmar: 'a confirmar', reportado: 'reportado' }, updated: 'Coletado em', none: 'Nenhum item ainda.', fonte: 'Fonte', ransom: 'ligado a ransomware', due: 'prazo de correção', clientes: 'clientes afetados' },
   en: { brand: 'Global monitor', eyebrow: 'Updated from official sources', title: 'Incidents worldwide, with source and date', mapTitle: 'Blackout map', mapHint: 'Dots = outages with a location given by the source. Colour = severity; size = customers affected. Cyberattacks have no location and appear only in the list.', mapEmpty: 'No located blackouts yet. Blackout sources pending.', tabAll: 'All', tabCyber: 'Cyberattacks', tabPower: 'Blackouts', footer: 'Each item shows its original source. "To confirm" items are not yet verified by an official source.', kind: { cyber: 'Cyberattack', power: 'Blackout' }, st: { confirmado: 'confirmed', a_confirmar: 'to confirm', reportado: 'reported' }, updated: 'Collected at', none: 'No items yet.', fonte: 'Source', ransom: 'linked to ransomware', due: 'fix due', clientes: 'customers affected' },
   es: { brand: 'Monitor global', eyebrow: 'Actualizado desde fuentes oficiales', title: 'Incidentes en el mundo, con fuente y fecha', mapTitle: 'Mapa de apagones', mapHint: 'Puntos = apagones con ubicación informada por la fuente. Color = gravedad; tamaño = clientes afectados. Los ciberataques no tienen ubicación y aparecen solo en la lista.', mapEmpty: 'Aún no hay apagones con ubicación. Fuentes de apagones pendientes.', tabAll: 'Todo', tabCyber: 'Ciberataques', tabPower: 'Apagones', footer: 'Cada elemento muestra su fuente original. Los elementos "por confirmar" aún no han sido verificados por una fuente oficial.', kind: { cyber: 'Ciberataque', power: 'Apagón' }, st: { confirmado: 'confirmado', a_confirmar: 'por confirmar', reportado: 'reportado' }, updated: 'Recopilado el', none: 'Aún no hay elementos.', fonte: 'Fuente', ransom: 'vinculado a ransomware', due: 'plazo de corrección', clientes: 'clientes afectados' },
 };
+const LEG = {
+  pt: { legAlta: 'Alta gravidade', legMedia: 'Média', legBaixa: 'Baixa', legCount: 'Apagões' },
+  en: { legAlta: 'High severity', legMedia: 'Medium', legBaixa: 'Low', legCount: 'Blackouts' },
+  es: { legAlta: 'Gravedad alta', legMedia: 'Media', legBaixa: 'Baja', legCount: 'Apagones' },
+};
+Object.keys(T).forEach((k) => Object.assign(T[k], LEG[k]));
 let lang = (navigator.language || 'pt').slice(0, 2);
 if (!T[lang]) lang = 'pt';
 let filter = 'all';
@@ -24,11 +30,19 @@ function applyI18n() {
 function renderMap() {
   const svg = document.getElementById('map');
   svg.innerHTML = '';
-  if (countries) drawCountries(svg, countries);
-  const markers = (data.items || []).filter((i) => i.kind === 'power' && Number.isFinite(i.lat) && Number.isFinite(i.lon))
+  addDefs(svg);
+  const power = (data.items || []).filter((i) => i.kind === 'power');
+  const counts = {};
+  for (const i of power) if (i.country) counts[i.country] = (counts[i.country] || 0) + 1;
+  const max = Math.max(0, ...Object.values(counts));
+  if (countries) drawCountries(svg, countries, (name) => heatColor(counts[name], max));
+  const markers = power.filter((i) => Number.isFinite(i.lat) && Number.isFinite(i.lon))
     .map((i) => ({ lat: i.lat, lon: i.lon, label: i.title, severity: i.severity, clientes: i.clientes }));
   if (markers.length) drawMarkers(svg, markers);
   document.getElementById('maphint').textContent = markers.length ? T[lang].mapHint : T[lang].mapEmpty;
+  const legend = document.getElementById('legend');
+  legend.innerHTML = `<span class="sw alta"></span>${T[lang].legAlta} <span class="sw media"></span>${T[lang].legMedia} <span class="sw baixa"></span>${T[lang].legBaixa}`
+    + ` <span class="sep"></span>${T[lang].legCount}: ${power.length}`;
 }
 
 function render() {
