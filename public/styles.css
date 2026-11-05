@@ -1,0 +1,36 @@
+/* Tokens extraídos da referência visual (renderização, 05/11/2026). Ajustar após revisão. */
+:root {
+  --bg: #0F0E0D;
+  --fg: #FAFAF9;
+  --muted: #A6A39C;
+  --muted-2: #85827C;
+  --surface: rgba(27, 26, 23, 0.85);
+  --border: rgba(250, 250, 249, 0.14);
+  --alert: #F14242;
+  --info: #5D7EE9;
+  --ok: #3DD68C;
+  --font-ui: Geist, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-display: Faustina, Georgia, "Times New Roman", serif;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--fg); font: 13px/1.45 var(--font-ui); }
+.top { display: flex; justify-content: space-between; align-items: center; padding: 14px 20px; border-bottom: 1px solid var(--border); }
+.brand { font-weight: 600; letter-spacing: 0.02em; }
+.lang button, .tabs button { background: none; color: var(--muted); border: 1px solid var(--border); border-radius: 999px; padding: 6px 12px; font: inherit; cursor: pointer; }
+.lang button[aria-pressed="true"], .tabs button[aria-selected="true"] { color: var(--fg); background: var(--surface); }
+main { max-width: 880px; margin: 0 auto; padding: 24px 20px 48px; }
+.hero h1 { font-family: var(--font-display); font-weight: 500; font-size: clamp(26px, 4vw, 40px); margin: 6px 0 8px; }
+.eyebrow { color: var(--muted-2); font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.08em; margin: 0; }
+.meta { color: var(--muted); margin: 0 0 20px; }
+.tabs { display: flex; gap: 8px; margin: 12px 0 16px; }
+.feed { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
+.card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 14px 16px; }
+.card h2 { font-size: 15px; font-weight: 600; margin: 4px 0 6px; }
+.card .src { color: var(--muted-2); font-size: 11px; }
+.badge { display: inline-block; font-size: 11px; font-weight: 500; padding: 2px 8px; border-radius: 999px; border: 1px solid var(--border); margin-right: 6px; }
+.badge.cyber { color: var(--alert); }
+.badge.power { color: var(--info); }
+.badge.confirmado { color: var(--ok); }
+.badge.a_confirmar { color: var(--muted); }
+.notice, footer { color: var(--muted-2); font-size: 11px; }
+footer { margin-top: 32px; }

@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Monitor global de incidentes</title>
+<meta name="description" content="Apagões e incidentes de segurança no mundo, com fonte e data de cada item.">
+<meta name="theme-color" content="#0F0E0D">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="top">
+  <div class="brand" data-i18n="brand">Monitor global</div>
+  <nav class="lang" aria-label="Idioma">
+    <button data-lang="pt">PT</button><button data-lang="en">EN</button><button data-lang="es">ES</button>
+  </nav>
+</header>
+<main>
+  <section class="hero">
+    <p class="eyebrow" data-i18n="eyebrow">Atualizado a partir das fontes oficiais</p>
+    <h1 data-i18n="title">Incidentes no mundo, com fonte e data</h1>
+    <p class="meta" id="meta" aria-live="polite"></p>
+  </section>
+  <div class="tabs" role="tablist">
+    <button role="tab" data-filter="all" aria-selected="true" data-i18n="tabAll">Tudo</button>
+    <button role="tab" data-filter="cyber" aria-selected="false" data-i18n="tabCyber">Ciberataques</button>
+    <button role="tab" data-filter="power" aria-selected="false" data-i18n="tabPower">Apagões</button>
+  </div>
+  <ul class="feed" id="feed"></ul>
+  <p class="notice" id="errors"></p>
+</main>
+<footer data-i18n="footer">Cada item mostra a fonte original.</footer>
+<script src="app.js" type="module"></script>
+</body>
+</html>
