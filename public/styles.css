@@ -1,51 +1,119 @@
-/* Tokens extraídos da referência visual (renderização, 05/11/2026). Ajustar após revisão. */
+/* Layout inspirado na referência (escuro, cartões, pílulas, barra inferior).
+   Tokens extraídos da renderização de 05/11/2026. */
 :root {
   --bg: #0F0E0D;
   --fg: #FAFAF9;
   --muted: #A6A39C;
   --muted-2: #85827C;
   --surface: rgba(27, 26, 23, 0.85);
+  --surface-2: #1B1A17;
   --border: rgba(250, 250, 249, 0.14);
   --alert: #F14242;
+  --alert-2: #EE2D35;
   --info: #5D7EE9;
   --ok: #3DD68C;
+  --amber: #F0A24B;
   --font-ui: Geist, "Helvetica Neue", Helvetica, Arial, sans-serif;
   --font-display: Faustina, Georgia, "Times New Roman", serif;
 }
 * { box-sizing: border-box; }
-body { margin: 0; background: var(--bg); color: var(--fg); font: 13px/1.45 var(--font-ui); }
-.top { display: flex; justify-content: space-between; align-items: center; padding: 14px 20px; border-bottom: 1px solid var(--border); }
-.brand { font-weight: 600; letter-spacing: 0.02em; }
-.lang button, .tabs button { background: none; color: var(--muted); border: 1px solid var(--border); border-radius: 999px; padding: 6px 12px; font: inherit; cursor: pointer; }
-.lang button[aria-pressed="true"], .tabs button[aria-selected="true"] { color: var(--fg); background: var(--surface); }
-main { max-width: 880px; margin: 0 auto; padding: 24px 20px 48px; }
-.hero h1 { font-family: var(--font-display); font-weight: 500; font-size: clamp(26px, 4vw, 40px); margin: 6px 0 8px; }
-.eyebrow { color: var(--muted-2); font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.08em; margin: 0; }
-.meta { color: var(--muted); margin: 0 0 20px; }
-.tabs { display: flex; gap: 8px; margin: 12px 0 16px; }
+html { scroll-behavior: smooth; scroll-padding-top: 70px; }
+body { margin: 0; background: var(--bg); color: var(--fg); font: 13px/1.45 var(--font-ui); padding-bottom: 72px; }
+a { color: inherit; }
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+
+/* Cabeçalho */
+.topbar { position: sticky; top: 0; z-index: 10; display: flex; justify-content: space-between; align-items: center; gap: 10px; padding: 12px 16px; background: rgba(15, 14, 13, 0.92); backdrop-filter: blur(8px); border-bottom: 1px solid var(--border); }
+.brand { display: flex; align-items: center; gap: 8px; text-decoration: none; font-weight: 600; letter-spacing: 0.01em; font-size: 15px; }
+.mark { width: 26px; height: 26px; border-radius: 8px; background: var(--fg); color: var(--bg); display: grid; place-items: center; }
+.mark svg { width: 16px; height: 16px; }
+.topactions { display: flex; align-items: center; gap: 8px; }
+.lang button, .share, .pills button, .tl-live { font: inherit; cursor: pointer; }
+.lang { display: flex; gap: 4px; }
+.lang button { background: none; color: var(--muted); border: 1px solid var(--border); border-radius: 999px; padding: 5px 10px; }
+.lang button[aria-pressed="true"] { color: var(--fg); background: var(--surface); }
+.share { background: var(--ok); color: #06210F; border: 0; border-radius: 999px; padding: 7px 14px; font-weight: 600; }
+
+main { max-width: 760px; margin: 0 auto; padding: 18px 16px 24px; }
+
+/* Título */
+.hero { padding: 6px 2px 14px; }
+.live { display: flex; align-items: center; gap: 6px; margin: 0 0 8px; color: var(--muted); font-size: 12px; }
+.dot { width: 8px; height: 8px; border-radius: 50%; background: var(--alert); box-shadow: 0 0 0 0 rgba(241, 66, 66, 0.6); animation: pulse 2s infinite; }
+@keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(241, 66, 66, 0.6); } 70% { box-shadow: 0 0 0 8px rgba(241, 66, 66, 0); } 100% { box-shadow: 0 0 0 0 rgba(241, 66, 66, 0); } }
+.hero h1 { font-family: var(--font-display); font-weight: 500; font-size: clamp(26px, 5vw, 36px); line-height: 1.12; margin: 0 0 6px; }
+.sub { color: var(--muted); margin: 0; }
+
+/* Resumo (duas colunas + barra proporcional, como o placar da referência) */
+.summary { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 14px 16px; }
+.sumrow { display: flex; justify-content: space-between; gap: 12px; }
+.side { display: flex; flex-direction: column; gap: 2px; }
+.side.cyber { text-align: right; }
+.side .lbl { color: var(--muted); font-size: 12px; }
+.side strong { font-size: 26px; font-weight: 600; font-variant-numeric: tabular-nums; }
+.side.power strong { color: var(--info); }
+.side.cyber strong { color: var(--alert); }
+.bar { display: flex; height: 8px; border-radius: 999px; overflow: hidden; background: var(--surface-2); margin-top: 12px; }
+.bar .seg { height: 100%; transition: width 0.4s; }
+.bar .seg.power { background: var(--info); width: 50%; }
+.bar .seg.cyber { background: var(--alert); width: 50%; }
+
+/* Abas em pílula */
+.pills { display: flex; gap: 6px; margin: 18px 0 12px; padding: 4px; background: var(--surface); border: 1px solid var(--border); border-radius: 999px; width: fit-content; max-width: 100%; overflow-x: auto; }
+.pills button { background: none; color: var(--muted); border: 0; border-radius: 999px; padding: 7px 14px; white-space: nowrap; }
+.pills button[aria-selected="true"] { background: var(--surface-2); color: var(--fg); box-shadow: inset 0 0 0 1px var(--border); }
+
+/* Mapa */
+.mapcard { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 10px; }
+.mapwrap { position: relative; }
+.map { width: 100%; height: auto; display: block; border-radius: 12px; background: var(--surface-2); }
+.map .countries path { fill: #1B1A17; stroke: rgba(250, 250, 249, 0.12); stroke-width: 0.5; }
+.marker { stroke: var(--bg); stroke-width: 1; opacity: 0.9; }
+.marker.alta { fill: var(--alert); }
+.marker.media { fill: var(--amber); }
+.marker.baixa { fill: var(--info); }
+.chips { position: absolute; right: 6px; top: 6px; display: flex; flex-direction: column; gap: 4px; }
+.chips span { font-size: 11px; font-weight: 600; padding: 3px 8px; border-radius: 6px; background: var(--alert); color: #fff; text-align: center; min-width: 34px; }
+.chips span.low { background: var(--surface-2); color: var(--muted); }
+.legend { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin: 10px 2px 0; color: var(--muted); font-size: 12px; }
+.legend .sw { display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin-right: 4px; vertical-align: middle; }
+.legend .sw.alta { background: var(--alert); }
+.legend .sw.media { background: var(--amber); }
+.legend .sw.baixa { background: var(--info); }
+.legend .sep { display: inline-block; width: 1px; height: 14px; background: var(--border); }
+.timeline { display: flex; align-items: center; gap: 10px; margin: 12px 2px 0; padding: 10px 12px; border: 1px solid var(--border); border-radius: 999px; font-size: 12px; color: var(--muted); }
+.tl-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--fg); }
+.tl-track { flex: 1; height: 4px; border-radius: 999px; background: var(--surface-2); position: relative; }
+.tl-track::after { content: ""; position: absolute; right: 0; top: -4px; width: 12px; height: 12px; border-radius: 50%; background: var(--fg); }
+.tl-live { background: none; color: var(--fg); border: 0; }
+.maphint { color: var(--muted-2); font-size: 11px; margin: 8px 2px 0; }
+
+/* Lista */
+.sectitle { font-family: var(--font-display); font-weight: 500; font-size: 22px; margin: 26px 2px 10px; }
 .feed { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
-.card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 14px 16px; }
-.card h2 { font-size: 15px; font-weight: 600; margin: 4px 0 6px; }
+.card { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 14px 16px; }
+.card h3 { font-size: 15px; font-weight: 600; margin: 6px 0; }
 .card .src { color: var(--muted-2); font-size: 11px; }
 .badge { display: inline-block; font-size: 11px; font-weight: 500; padding: 2px 8px; border-radius: 999px; border: 1px solid var(--border); margin-right: 6px; }
 .badge.cyber { color: var(--alert); }
 .badge.power { color: var(--info); }
 .badge.confirmado { color: var(--ok); }
 .badge.a_confirmar { color: var(--muted); }
-.mapwrap { margin: 8px 0 4px; }
-.map { width: 100%; height: auto; display: block; background: var(--surface); border: 1px solid var(--border); border-radius: 12px; }
-.map .countries path { fill: #1B1A17; stroke: rgba(250, 250, 249, 0.12); stroke-width: 0.5; }
-.marker { stroke: var(--bg); stroke-width: 1; opacity: 0.9; }
-.marker.alta { fill: var(--alert); }
-.marker.media { fill: #F0A24B; }
-.marker.baixa { fill: var(--info); }
-.maphint { color: var(--muted-2); font-size: 11px; margin: 6px 0 0; }
-.legend { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin: 10px 0 0; padding: 10px 14px; background: var(--surface); border: 1px solid var(--border); border-radius: 12px; color: var(--muted); font-size: 12px; }
-.legend .sw { display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin-right: 4px; vertical-align: middle; }
-.legend .sw.alta { background: var(--alert); }
-.legend .sw.media { background: #F0A24B; }
-.legend .sw.baixa { background: var(--info); }
-.legend .sep { display: inline-block; width: 1px; height: 14px; background: var(--border); margin: 0 4px; }
-.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+
+/* Fontes */
+.srclist { list-style: none; padding: 0; margin: 0; display: grid; gap: 8px; }
+.srclist li { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 10px 14px; color: var(--muted); }
+.srclist strong { color: var(--fg); }
+
 .notice, footer { color: var(--muted-2); font-size: 11px; }
-footer { margin-top: 32px; }
+footer { margin-top: 28px; text-align: center; }
+
+/* Barra inferior fixa */
+.bottomnav { position: fixed; left: 0; right: 0; bottom: 0; z-index: 10; display: flex; justify-content: space-around; padding: 10px 12px; background: rgba(15, 14, 13, 0.96); border-top: 1px solid var(--border); }
+.bottomnav a { color: var(--muted); text-decoration: none; font-size: 12px; padding: 6px 14px; border-radius: 999px; }
+.bottomnav a:hover, .bottomnav a:focus-visible { color: var(--fg); background: var(--surface); }
+
+@media (min-width: 900px) {
+  main { max-width: 980px; }
+  .bottomnav { justify-content: center; gap: 12px; }
+}

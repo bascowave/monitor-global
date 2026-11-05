@@ -9,33 +9,77 @@
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<header class="top">
-  <div class="brand" data-i18n="brand">Monitor global</div>
-  <nav class="lang" aria-label="Idioma">
-    <button data-lang="pt">PT</button><button data-lang="en">EN</button><button data-lang="es">ES</button>
-  </nav>
+<header class="topbar">
+  <a class="brand" href="#top" aria-label="Início">
+    <span class="mark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12l4.5 4.5L19 7" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+    <span data-i18n="brand">Monitor global</span>
+  </a>
+  <div class="topactions">
+    <nav class="lang" aria-label="Idioma">
+      <button data-lang="pt">PT</button><button data-lang="en">EN</button><button data-lang="es">ES</button>
+    </nav>
+    <button class="share" id="share" data-i18n="share">Compartilhar</button>
+  </div>
 </header>
-<main>
+
+<main id="top">
   <section class="hero">
-    <p class="eyebrow" data-i18n="eyebrow">Atualizado a partir das fontes oficiais</p>
+    <p class="live"><span class="dot" aria-hidden="true"></span><span data-i18n="live">Ao vivo</span> · <span id="updated"></span></p>
     <h1 data-i18n="title">Incidentes no mundo, com fonte e data</h1>
-    <p class="meta" id="meta" aria-live="polite"></p>
+    <p class="sub" data-i18n="eyebrow">Atualizado a partir das fontes oficiais</p>
   </section>
-  <section class="mapwrap" aria-labelledby="maptitle">
+
+  <section class="summary" aria-labelledby="sumtitle">
+    <h2 id="sumtitle" class="sr" data-i18n="sumTitle">Resumo</h2>
+    <div class="sumrow">
+      <div class="side power"><span class="lbl" data-i18n="tabPower">Apagões</span><strong id="cPower">0</strong></div>
+      <div class="side cyber"><span class="lbl" data-i18n="tabCyber">Ciberataques</span><strong id="cCyber">0</strong></div>
+    </div>
+    <div class="bar" role="img" aria-label="Proporção"><span class="seg power" id="barPower"></span><span class="seg cyber" id="barCyber"></span></div>
+  </section>
+
+  <div class="pills" role="tablist" aria-label="Filtro">
+    <button role="tab" data-filter="power" aria-selected="true" data-i18n="tabPower">Apagões</button>
+    <button role="tab" data-filter="cyber" aria-selected="false" data-i18n="tabCyber">Ciberataques</button>
+    <button role="tab" data-filter="all" aria-selected="false" data-i18n="tabAll">Tudo</button>
+  </div>
+
+  <section class="mapcard" id="mapa" aria-labelledby="maptitle">
     <h2 id="maptitle" class="sr" data-i18n="mapTitle">Mapa de apagões</h2>
-    <svg id="map" class="map" viewBox="0 0 1000 500" role="img" aria-label="Mapa-múndi"></svg>
+    <div class="mapwrap">
+      <svg id="map" class="map" viewBox="0 0 1000 500" role="img" aria-label="Mapa-múndi"></svg>
+      <aside class="chips" id="chips" aria-label="Países com apagões"></aside>
+    </div>
     <div class="legend" id="legend" aria-live="polite"></div>
+    <div class="timeline" role="group" aria-label="Período">
+      <span class="tl-dot" aria-hidden="true"></span>
+      <span class="tl-now" id="tlNow"></span>
+      <span class="tl-track" aria-hidden="true"></span>
+      <span class="tl-live" data-i18n="live">Ao vivo</span>
+    </div>
     <p class="maphint" id="maphint" data-i18n="mapHint"></p>
   </section>
-  <div class="tabs" role="tablist">
-    <button role="tab" data-filter="all" aria-selected="true" data-i18n="tabAll">Tudo</button>
-    <button role="tab" data-filter="cyber" aria-selected="false" data-i18n="tabCyber">Ciberataques</button>
-    <button role="tab" data-filter="power" aria-selected="false" data-i18n="tabPower">Apagões</button>
-  </div>
-  <ul class="feed" id="feed"></ul>
-  <p class="notice" id="errors"></p>
+
+  <section class="feedsec" id="lista" aria-labelledby="feedtitle">
+    <h2 id="feedtitle" class="sectitle" data-i18n="feedTitle">Lista de incidentes</h2>
+    <ul class="feed" id="feed"></ul>
+    <p class="notice" id="errors"></p>
+  </section>
+
+  <section class="sources" id="fontes" aria-labelledby="srctitle">
+    <h2 id="srctitle" class="sectitle" data-i18n="srcTitle">Fontes</h2>
+    <ul class="srclist" id="srclist"></ul>
+  </section>
+
+  <footer data-i18n="footer">Cada item mostra a fonte original.</footer>
 </main>
-<footer data-i18n="footer">Cada item mostra a fonte original.</footer>
+
+<nav class="bottomnav" aria-label="Navegação">
+  <a href="#mapa" data-i18n="navMap">Mapa</a>
+  <a href="#lista" data-i18n="navList">Lista</a>
+  <a href="#fontes" data-i18n="navSrc">Fontes</a>
+</nav>
+
 <script src="app.js" type="module"></script>
 </body>
 </html>

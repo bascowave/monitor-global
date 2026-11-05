@@ -12,7 +12,7 @@ export async function runIngest({ fetchFn = fetch, outFile = DATA_FILE } = {}) {
   let items = [];
   try { items = items.concat(await fetchKev(fetchFn)); } catch (e) { errors.push({ source: 'CISA KEV', message: e.message }); }
   items.sort((a, b) => (a.publishedAt < b.publishedAt ? 1 : -1));
-  const doc = { collectedAt: started, count: items.length, errors, items: items.slice(0, 500) };
+  const doc = { collectedAt: started, count: items.length, errors, items };
   await fs.mkdir(path.dirname(outFile), { recursive: true });
   await fs.writeFile(outFile, JSON.stringify(doc, null, 2), 'utf8');
   return doc;
