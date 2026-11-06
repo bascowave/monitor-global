@@ -48,3 +48,15 @@ O Radar usa `locationsDetails[].code` e `locations[]`, com fallback textual por 
 ## Deploy
 
 Não publicado. Criar o app na Coolify, o domínio e o DNS exigem autorização explícita.
+
+### Painel local no mapa
+
+Clique/toque em país, UF/estado ou ponto agrupado para abrir as ocorrências locais. Enter/Espaço também ativam os polígonos; X/Escape fecham e devolvem o foco. O painel fica à direita no desktop e na parte inferior no celular. Filtros locais (Tudo, Apagões, Ciber, Desastres) não dependem das abas da lista global; Notícias têm seção própria. Cada seção é ordenada por `publishedAt` decrescente.
+
+Compartilhe `?local=BR`, `?local=BR-RR`, `?local=US-AZ` (também aceita `#BR` e `#BR-RR`). A seleção/fechamento atualiza a URL com `history.replaceState`. Grupos de pontos abrem somente seus membros, sem código geográfico compartilhável.
+
+BR/EUA carregam limites apenas na seleção do país; há zoom e seletor de estados, inclusive Alaska, Havaí e DC. A visão inicial dos EUA destaca o território continental; os demais continuam acessíveis pelo seletor. Os [GeoJSON locais](public/geo/README.md) usam Natural Earth de domínio público. ONS preenche `state` com UF; ODIN usa tabela estática FIPS→USPS e mantém estado mesmo quando o condado não possui coordenadas. Reexecute `npm run ingest` para atualizar dados antigos sem esses campos.
+
+GDELT preenche `country` pelo `sourcecountry`: é o país da fonte jornalística, que pode diferir do local do fato. Notícias sem estado conhecido aparecem somente no país; itens globais sem país não são atribuídos artificialmente a um local.
+
+Validação: `npm test` (inclui filtros locais, clusters, URLs, GDELT, normalização de estado e integridade/tamanho dos limites). Merge e deploy somente com GO explícito.
