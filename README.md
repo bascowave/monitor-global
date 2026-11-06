@@ -21,7 +21,7 @@ A configuração está em `.env.example`. Para usar um `.env` local, copie o exe
 | CISA KEV | Catálogo de vulnerabilidades exploradas, preservado integralmente |
 | Cloudflare Radar | Até 100 outages e um resumo global de ataques HTTP dos últimos 7 dias; requer `CLOUDFLARE_RADAR_TOKEN` |
 | IODA v2 | Até 100 alertas de conectividade dos últimos 7 dias, com timestamps Unix absolutos |
-| ONS | CSV de interrupções de carga; 200 eventos mais recentes, agrupados por perturbação e data |
+| ONS | CSV de interrupções de carga; 200 eventos mais recentes, agrupados por perturbação, data e UF |
 | ODIN / ORNL | Até 100 interrupções nos EUA por medidores afetados; exclui restauração estimada há mais de 24h |
 | GDELT DOC 2.0 | Uma consulta multilíngue, até 50 notícias com status `reportado` |
 | USGS | Terremotos de magnitude 4,5 ou superior no feed diário |
@@ -36,6 +36,14 @@ No ONS, horários sem fuso são interpretados como Brasília (UTC-3). No ODIN, q
 Não execute coletas com intervalo inferior a 5 segundos: o GDELT recebe uma única requisição por ingest. Para uso recorrente, mantenha cache e respeite os limites das fontes; não consulte as APIs a cada visita.
 
 O diagnóstico opcional `node scripts/smoke.mjs` usa as APIs reais e imprime apenas contagens por adaptador, sem gravar `incidents.json`. O Radar usa a variável de ambiente se configurada. Para carregar `.env`, use `node --env-file=.env scripts/smoke.mjs`.
+
+## Localização no mapa
+
+`src/geo.mjs` resolve ISO-2/ISO-3 e nomes en/pt, centróides das 27 UFs e pontos internos de condados por FIPS. Dados, proveniência e geração reproduzível estão em [data/geo/README.md](data/geo/README.md). Não há API de geocoding nem dependências de runtime adicionais.
+
+O Radar usa `locationsDetails[].code` e `locations[]`, com fallback textual por país/topônimo (incluindo Zhytomyr → UA); eventos em vários países geram um item por país. IODA usa o código do país ou `attrs.country_code`; ASN/geoASN sem esse campo permanecem sem coordenadas. ONS soma MW por evento e UF; ODIN preserva medidores em `clientes` e resolve o FIPS. USGS e GDACS usam coordenadas dos feeds, com fallback GDACS por país.
+
+`precisao` indica `pais`, `estado`, `condado` ou `exata`. O heatmap usa ISO-2. Pontos próximos são agrupados em células de 2°, com gravidade máxima e soma de MW/clientes em campos distintos; o raio usa MW ou clientes. Pontos de país são menores e menos opacos. O toggle **Desastres** começa desligado e acrescenta USGS/GDACS em roxo. O GeoJSON Natural Earth é servido localmente.
 
 ## Deploy
 
