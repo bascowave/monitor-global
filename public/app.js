@@ -1,4 +1,5 @@
-import { addDefs, drawCountries, drawMarkers, heatColor } from './map.js';
+import { createLocalPanel } from './panel.js';
+import { addDefs, drawCountries, drawMarkers, heatColor, drawStates } from './map.js';
 
 const T = {
   pt: { disasters: 'Desastres', brand: 'Monitor global', share: 'Compartilhar', live: 'Ao vivo', title: 'Incidentes no mundo, com fonte e data', eyebrow: 'Atualizado a partir das fontes oficiais', sumTitle: 'Resumo', tabAll: 'Tudo', tabCyber: 'Ciberataques', tabPower: 'Apagões', mapTitle: 'Mapa de apagões', mapHint: 'Pontos agrupados por proximidade. Cor = gravidade; tamanho = MW ou clientes. Pontos menores e suaves = localização aproximada do país. Desastres em roxo são opcionais.', mapEmpty: 'Nenhum apagão localizado nesta coleta. Ative Desastres para ver os eventos naturais disponíveis.', feedTitle: 'Lista de incidentes', srcTitle: 'Fontes', navMap: 'Mapa', navList: 'Lista', navSrc: 'Fontes', footer: 'Cada item mostra a fonte original. Itens "a confirmar" ainda não foram verificados por fonte oficial.', kind: { cyber: 'Ciberataque', power: 'Apagão' }, st: { confirmado: 'confirmado', a_confirmar: 'a confirmar', reportado: 'reportado' }, updated: 'Coletado em', none: 'Nenhum item ainda.', fonte: 'Fonte', ransom: 'ligado a ransomware', due: 'prazo de correção', legAlta: 'Alta gravidade', legMedia: 'Média', legBaixa: 'Baixa', legCount: 'Apagões', srcNote: 'Fontes ativas: CISA KEV, Cloudflare Radar, IODA, ONS, ODIN, GDELT, USGS e GDACS. ENTSO-E ainda pendente.' },
@@ -10,6 +11,8 @@ if (!T[lang]) lang = 'pt';
 let filter = 'power';
 let data = { items: [], errors: [] };
 let countries = null;
+
+const localPanel = createLocalPanel({ getData: () => data, getLang: () => lang, onMapChange: renderMap });
 
 const SOURCE_LINKS = [['CISA KEV', 'https://www.cisa.gov/known-exploited-vulnerabilities-catalog'], ['Cloudflare Radar', 'https://radar.cloudflare.com/outage-center'], ['IODA', 'https://ioda.inetintel.cc.gatech.edu'], ['ONS', 'https://dados.ons.org.br/dataset/interrupcao_carga'], ['ODIN', 'https://odin.ornl.gov'], ['GDELT', 'https://www.gdeltproject.org'], ['USGS', 'https://earthquake.usgs.gov'], ['GDACS', 'https://www.gdacs.org']];
 
@@ -49,11 +52,17 @@ function renderMap() {
   const byCountry = {};
   for (const i of power) if (i.country) byCountry[i.country] = (byCountry[i.country] || 0) + 1;
   const max = Math.max(0, ...Object.values(byCountry));
-  if (countries) drawCountries(svg, countries, (iso) => heatColor(byCountry[iso], max));
+  if (countries) drawCountries(svg, countries, (iso) => heatColor(byCountry[iso], max), (s) => localPanel.open(s));
+  const selected = localPanel.selection;
+  const drilldown = localPanel.geo;
+  const zoom = drilldown && !selected?.items;
+  svg.setAttribute('viewBox', zoom ? (selected.country === 'BR' ? '280 225 145 120' : '110 45 220 145') : '0 0 1000 500');
+  document.getElementById('map-reset').hidden = !zoom;
+  if (zoom) drawStates(svg, drilldown, (s) => localPanel.open(s), selected.state);
   const visible = document.getElementById('disasters').checked ? [...power, ...data.items.filter((i) => i.kind === 'disaster')] : power;
   const markers = visible.filter((i) => Number.isFinite(i.lat) && Number.isFinite(i.lon))
     .map((i) => ({ ...i, label: `${i.title} · ${i.region} · ${i.source} · ${i.precisao}` }));
-  if (markers.length) drawMarkers(svg, markers);
+  if (markers.length) drawMarkers(svg, markers, (s) => localPanel.open(s), zoom ? 0.35 : 1);
   document.getElementById('maphint').textContent = markers.length ? T[lang].mapHint : T[lang].mapEmpty;
 
   const chips = Object.entries(byCountry).sort((a, b) => b[1] - a[1]).slice(0, 5);
@@ -81,6 +90,7 @@ function renderAll() {
   renderSummary();
   renderMap();
   renderFeed();
+  localPanel.render();
   document.getElementById('errors').textContent = (data.errors || []).map((e) => `${e.source}: ${e.message}`).join(' · ');
 }
 
@@ -90,6 +100,7 @@ document.querySelectorAll('.pills button').forEach((b) => b.addEventListener('cl
   document.querySelectorAll('.pills button').forEach((x) => x.setAttribute('aria-selected', String(x === b)));
   renderFeed();
 }));
+document.getElementById('map-reset').addEventListener('click', () => localPanel.close());
 document.getElementById('disasters').addEventListener('change', renderMap);
 document.getElementById('share').addEventListener('click', async () => {
   const url = location.href;
@@ -107,4 +118,5 @@ Promise.all([
   countries = geo;
   data = d;
   renderAll();
+  localPanel.fromUrl();
 }).catch(() => { document.getElementById('errors').textContent = 'erro ao carregar'; });
