@@ -165,3 +165,10 @@ footer { margin-top: 28px; text-align: center; }
 @media (hover: hover) { .map .states path:hover { stroke: var(--fg); stroke-width: 1.2; } }
 .map .markers circle { filter: drop-shadow(0 0 3px currentColor); }
 .map .markers circle:focus-visible { stroke: var(--ok); stroke-width: 1.5; }
+
+/* Zoom e arraste do mapa. */
+.map { touch-action: none; cursor: grab; user-select: none; }
+.map:active { cursor: grabbing; }
+.zoomctl { position: absolute; left: 10px; bottom: 10px; z-index: 2; display: flex; flex-direction: column; gap: 4px; }
+.zoomctl button { width: 34px; height: 34px; border-radius: 8px; border: 1px solid var(--border); background: var(--surface-2); color: var(--fg); font: 16px var(--font-ui); cursor: pointer; }
+.zoomctl button:focus-visible { outline: 2px solid var(--ok); outline-offset: 2px; }

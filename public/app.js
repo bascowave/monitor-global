@@ -1,5 +1,6 @@
 import { createLocalPanel } from './panel.js';
 import { addDefs, drawCountries, drawMarkers, heatColor, drawStates } from './map.js';
+import { enablePanZoom, setBaseView, zoomBy, resetView } from './panzoom.js';
 
 const T = {
   pt: { disasters: 'Desastres', brand: 'Monitor global', share: 'Compartilhar', live: 'Ao vivo', title: 'Incidentes no mundo, com fonte e data', eyebrow: 'Atualizado a partir das fontes oficiais', sumTitle: 'Resumo', tabAll: 'Tudo', tabCyber: 'Ciberataques', tabPower: 'Apagões', mapTitle: 'Mapa de apagões', mapHint: 'Pontos agrupados por proximidade. Cor = gravidade; tamanho = MW ou clientes. Pontos menores e suaves = localização aproximada do país. Desastres em roxo são opcionais.', mapEmpty: 'Nenhum apagão localizado nesta coleta. Ative Desastres para ver os eventos naturais disponíveis.', feedTitle: 'Lista de incidentes', srcTitle: 'Fontes', navMap: 'Mapa', navList: 'Lista', navSrc: 'Fontes', footer: 'Cada item mostra a fonte original. Itens "a confirmar" ainda não foram verificados por fonte oficial.', kind: { cyber: 'Ciberataque', power: 'Apagão' }, st: { confirmado: 'confirmado', a_confirmar: 'a confirmar', reportado: 'reportado' }, updated: 'Coletado em', none: 'Nenhum item ainda.', fonte: 'Fonte', ransom: 'ligado a ransomware', due: 'prazo de correção', legAlta: 'Alta gravidade', legMedia: 'Média', legBaixa: 'Baixa', legCount: 'Apagões', srcNote: 'Fontes ativas: CISA KEV, Cloudflare Radar, IODA, ONS, ODIN, GDELT, USGS e GDACS. ENTSO-E ainda pendente.' },
@@ -57,7 +58,7 @@ function renderMap() {
   const drilldown = localPanel.geo;
   const zoom = drilldown && !selected?.items;
   svg.classList.toggle('zoomed', zoom);
-  svg.setAttribute('viewBox', zoom ? (selected.country === 'BR' ? '280 225 145 120' : '110 45 220 145') : '0 0 1000 500');
+  setBaseView(svg, zoom ? (selected.country === 'BR' ? [280, 225, 145, 120] : [110, 45, 220, 145]) : [0, 0, 1000, 500]);
   document.getElementById('map-reset').hidden = !zoom;
   if (zoom) drawStates(svg, drilldown, (s) => localPanel.open(s), selected.state);
   const visible = document.getElementById('disasters').checked ? [...power, ...data.items.filter((i) => i.kind === 'disaster')] : power;
@@ -105,6 +106,10 @@ document.querySelectorAll('.pills button').forEach((b) => b.addEventListener('cl
   renderFeed();
 }));
 document.getElementById('map-reset').addEventListener('click', () => localPanel.close());
+enablePanZoom(document.getElementById('map'));
+document.getElementById('zoom-in').addEventListener('click', () => zoomBy(document.getElementById('map'), 0.8));
+document.getElementById('zoom-out').addEventListener('click', () => zoomBy(document.getElementById('map'), 1 / 0.8));
+document.getElementById('zoom-reset').addEventListener('click', () => resetView(document.getElementById('map')));
 document.getElementById('disasters').addEventListener('change', renderMap);
 document.getElementById('share').addEventListener('click', async () => {
   const url = location.href;

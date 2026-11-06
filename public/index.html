@@ -49,6 +49,11 @@
     <label class="disaster-toggle"><input type="checkbox" id="disasters"> <span class="disaster-swatch" aria-hidden="true"></span><span data-i18n="disasters">Desastres</span></label>
     <button id="map-reset" hidden>🌐</button>
     <div class="mapwrap">
+      <div class="zoomctl" role="group" aria-label="Zoom do mapa">
+        <button id="zoom-in" type="button" aria-label="Aproximar">+</button>
+        <button id="zoom-out" type="button" aria-label="Afastar">−</button>
+        <button id="zoom-reset" type="button" aria-label="Restaurar vista">⤾</button>
+      </div>
       <svg id="map" class="map" viewBox="0 0 1000 500" role="group" aria-label="Mapa-múndi"></svg>
       <aside class="chips" id="chips" aria-label="Países com apagões"></aside>
     </div>
