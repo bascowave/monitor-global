@@ -1,9 +1,33 @@
 # Monitor global de incidentes (apagões e ciberataques) — proposta de fontes
 
-Status: proposta, nada construído nem publicado. Pesquisa feita em 05/11/2026.
+Status: adaptadores locais implementados em 06/11/2026, sem publicação. Pesquisa inicial em 05/11/2026.
 Idiomas: pt, en, es. Hospedagem: VPS Coolify (exige GO para criar app/subdomínio).
 
-## Fontes recomendadas para o MVP
+## Fontes ativas no ingest local
+
+| Fonte | Endpoint / referência | Comportamento |
+|---|---|---|
+| CISA KEV | [JSON oficial](https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json) | Catálogo de vulnerabilidades exploradas; sem chave |
+| Cloudflare Radar | [Outages](https://developers.cloudflare.com/api/resources/radar/subresources/annotations/subresources/outages/methods/get/) e [resumo HTTP](https://developers.cloudflare.com/api/resources/radar/subresources/attacks/subresources/layer7/subresources/summary/methods/http_method/) | Token opcional em `CLOUDFLARE_RADAR_TOKEN`; desligado sem token; até 100 outages e um agregado de 7 dias |
+| IODA v2 | [API de alertas](https://api.ioda.inetintel.cc.gatech.edu/v2/outages/alerts) | Até 100 alertas dos últimos 7 dias; Unix absoluto |
+| ONS | [Interrupção de Carga](https://dados.ons.org.br/dataset/interrupcao_carga) | CSV público, 200 eventos mais recentes; agrega linhas de mesma perturbação e data |
+| ODIN / ORNL | [JSON público](https://odin.ornl.gov/odi?format=JSON) | Até 100 eventos por medidores afetados; remove ETR há mais de 24h |
+| GDELT DOC 2.0 | [API DOC](https://api.gdeltproject.org/api/v2/doc/doc) | Uma query multilíngue, até 50 artigos, status `reportado`; intervalo mínimo de 5s entre ingests |
+| USGS | [GeoJSON diário M4.5+](https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/4.5_day.geojson) | Terremotos, status `confirmado` |
+| GDACS | [RSS público](https://www.gdacs.org/xml/rss.xml) | Até 50 alertas mais recentes, status `confirmado` |
+
+Os adaptadores usam apenas Node stdlib e falhas isoladas por fonte. Radar sem token é sucesso com zero itens. Os testes usam mocks, sem chamadas externas. `scripts/smoke.mjs` é opcional e consulta APIs reais exibindo somente contagens.
+
+No ODIN, datas de início ausentes usam o horário da coleta, com `timeBasis=observed`. No ONS, datas sem fuso usam UTC-3. GDELT fornece a data de observação do artigo. O agregado Radar descreve a distribuição dos ataques HTTP, sem criar milhares de incidentes.
+
+## Fontes pendentes e alternativas
+
+- **ENTSO-E**: pendente de token manual; nenhum adaptador ou stub executável implementado.
+- **ANEEL** e **cves.live**: alternativas avaliadas, fora do escopo atual.
+
+## Avaliação inicial de acesso e termos
+
+A tabela abaixo preserva a pesquisa inicial; não substitui a verificação dos termos antes de republicar dados.
 
 | Tema | Fonte | Acesso | Licença / termos | Observação |
 |---|---|---|---|---|
@@ -29,9 +53,8 @@ Idiomas: pt, en, es. Hospedagem: VPS Coolify (exige GO para criar app/subdomíni
 3. Mostrar a fonte e a data de atualização em cada card. Não somar números de regiões diferentes como se fossem medida global.
 4. Respeitar os intervalos de cache de cada fonte.
 
-## Decisões que preciso de você
+## Pendências
 
-1. Aprovar esta lista de fontes para o MVP, ou pedir mais alguma.
-2. Confirmar que o token da ENTSO-E pode ser criado com sua conta de e-mail (eu não crio conta por você).
-3. Autorizar eu criar a estrutura do repositório local (sem deploy) depois da aprovação.
-4. Quando for ao ar: subdomínio e GO para criar o app na Coolify (hoje não tenho autorização para isso).
+1. Obter manualmente o token ENTSO-E antes de implementar essa fonte.
+2. Verificar os termos de reuso aplicáveis antes de publicação.
+3. Autorizar separadamente eventual criação do app, domínio, DNS e deploy. Nenhum desses passos foi executado nesta integração.
