@@ -12,7 +12,7 @@ function ringToPath(ring) {
   }).join('') + 'Z';
 }
 
-function geometryToPath(geom) {
+export function geometryToPath(geom) {
   const polys = geom.type === 'Polygon' ? [geom.coordinates] : geom.coordinates;
   return polys.map((poly) => poly.map(ringToPath).join('')).join('');
 }
@@ -29,7 +29,7 @@ export function addDefs(svg) {
 }
 
 // fillFor(ISO-2) -> cor CSS. Padrão: fundo neutro.
-export function drawCountries(svg, geojson, fillFor = () => null) {
+export function drawCountries(svg, geojson, fillFor = () => null, onSelect = null) {
   const g = document.createElementNS(SVGNS, 'g');
   g.setAttribute('class', 'countries');
   for (const f of geojson.features) {
@@ -41,6 +41,7 @@ export function drawCountries(svg, geojson, fillFor = () => null) {
     p.setAttribute('data-country', iso || '');
     const fill = fillFor(iso);
     if (fill) p.setAttribute('style', `fill:${fill}`);
+    if (onSelect && iso && iso !== '-99') interactive(p, name || iso, () => onSelect({ country: iso }));
     g.appendChild(p);
   }
   svg.appendChild(g);
@@ -55,12 +56,13 @@ export function clusterMarkers(markers) {
     const key = `${m.kind}:${m.precisao === 'pais' ? m.country : ''}:${m.precisao === 'pais'}:${Math.floor((m.lon + 180) / 2)}:${Math.floor((m.lat + 90) / 2)}`;
     let group = groups.get(key);
     if (!group) {
-      group = { ...m, lat: 0, lon: 0, clientes: 0, mw: 0, severity: 'baixa', count: 0, labels: [] };
+      group = { ...m, lat: 0, lon: 0, clientes: 0, mw: 0, severity: 'baixa', count: 0, labels: [], items: [] };
       groups.set(key, group);
     }
     group.lat += m.lat; group.lon += m.lon; group.count++;
     group.clientes += Math.max(0, Number(m.clientes) || 0);
     group.mw += Math.max(0, Number(m.mw) || 0);
+    group.items.push(m);
     group.labels.push(m.label || '');
     if ((rank[m.severity] ?? 0) > rank[group.severity]) group.severity = m.severity;
   }
@@ -68,7 +70,7 @@ export function clusterMarkers(markers) {
     label: `${g.count > 1 ? `${g.count} ×\n` : ''}${g.labels.join('\n')}` }));
 }
 
-export function drawMarkers(svg, markers) {
+export function drawMarkers(svg, markers, onSelect = null, scale = 1) {
   const g = document.createElementNS(SVGNS, 'g');
   g.setAttribute('class', 'markers');
   g.setAttribute('filter', 'url(#glow)');
@@ -79,12 +81,13 @@ export function drawMarkers(svg, markers) {
     const r = (metric ? Math.min(14, 4 + Math.log10(metric + 1) * 2) : 5) * (m.precisao === 'pais' ? 0.65 : 1);
     c.setAttribute('cx', x.toFixed(1));
     c.setAttribute('cy', y.toFixed(1));
-    c.setAttribute('r', r.toFixed(1));
+    c.setAttribute('r', (r * scale).toFixed(1));
     c.setAttribute('data-count', m.count);
     c.setAttribute('class', `marker ${m.severity || 'baixa'}${m.precisao === 'pais' ? ' marker-pais' : ''}${m.kind === 'disaster' ? ' marker-disaster' : ''}`);
     const t = document.createElementNS(SVGNS, 'title');
     t.textContent = m.label;
     c.appendChild(t);
+    if (onSelect) interactive(c, m.label, () => onSelect({ items: m.items }));
     g.appendChild(c);
   }
   svg.appendChild(g);
@@ -99,3 +102,27 @@ export function heatColor(count, max) {
 }
 
 export { W, H, project };
+
+function interactive(element, label, activate) {
+  element.setAttribute('tabindex', '0');
+  element.setAttribute('role', 'button');
+  element.setAttribute('aria-label', label);
+  element.addEventListener('click', activate);
+  element.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); activate(); }
+  });
+}
+export function drawStates(svg, geojson, onSelect, selected) {
+  const g = document.createElementNS(SVGNS, 'g');
+  g.setAttribute('class', 'states');
+  for (const f of geojson.features) {
+    const p = document.createElementNS(SVGNS, 'path');
+    const { country, state, name } = f.properties;
+    p.setAttribute('d', geometryToPath(f.geometry));
+    p.setAttribute('data-state', state);
+    p.setAttribute('class', selected === state ? 'selected' : '');
+    interactive(p, `${name} (${state})`, () => onSelect({ country, state }));
+    g.appendChild(p);
+  }
+  svg.appendChild(g);
+}
