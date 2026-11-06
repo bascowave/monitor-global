@@ -1,4 +1,4 @@
-import { attachGeo, resolveCountry, resolveBrUf, resolveUsCounty, countriesInText } from './geo.mjs';
+import { attachGeo, resolveCountry, resolveBrUf, resolveUsCounty, resolveUsState, countriesInText } from './geo.mjs';
 import { createHash } from 'node:crypto';
 import https from 'node:https';
 import { URL as NodeURL } from 'node:url';
@@ -204,6 +204,7 @@ export async function fetchOdinOutages(fetchFn = fetch) {
     const clientes = Number(o.metersAffected);
     return attachGeo({
       id: `odin-${o.communityDescriptor}-${o.reportedStartTime || o.mrid || o.MRID || hash(utility)}`,
+      country: 'US', state: resolveUsState(o.communityDescriptor),
       kind: 'power', title: `Apagão: ${o.metersAffected} medidores afetados — ${utility}`,
       clientes, severity: clientes >= 10000 ? 'alta' : clientes >= 1000 ? 'media' : 'baixa',
       region: geo ? `${geo.name} / ${geo.state}` : `EUA / FIPS ${o.communityDescriptor}`, publishedAt: start || new Date(now).toISOString(),
@@ -246,6 +247,7 @@ export async function fetchGdeltArticles(fetchFn = fetch) {
     seen.add(a.url);
     return [{
       id: `gdelt-${hash(a.url)}`, kind: 'news', title: a.title || a.url,
+      country: resolveCountry(a.sourcecountry)?.country,
       region: a.sourcecountry || 'Global', publishedAt, source: 'GDELT', sourceUrl: a.url, status: 'reportado',
     }];
   });
