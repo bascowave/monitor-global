@@ -122,3 +122,32 @@ footer { margin-top: 28px; text-align: center; }
 .marker.marker-disaster { fill: #b58cff; }
 .disaster-toggle { display: flex; align-items: center; gap: 6px; width: fit-content; margin: 2px 4px 10px; color: var(--muted); cursor: pointer; }
 .disaster-swatch { width: 9px; height: 9px; border-radius: 50%; background: #b58cff; }
+
+/* Navegação local: o mapa permanece utilizável com o painel aberto. */
+.map [role="button"] { cursor: pointer; }
+.map [role="button"]:focus-visible { outline: none; stroke: var(--ok); stroke-width: 1.5; }
+.map .states path { fill: #283c35; stroke: #b2c4bb; stroke-width: .3; vector-effect: non-scaling-stroke; }
+.map .states path:hover, .map .states path.selected { fill: #426952; }
+.map .countries path:hover { fill: #37443c !important; }
+.local-panel { position: fixed; z-index: 20; right: 0; top: 62px; bottom: 0; width: min(430px, 44vw); padding: 22px; overflow-y: auto; background: #151612; border-left: 1px solid var(--border); box-shadow: -12px 0 40px #0006; }
+[hidden] { display: none !important; }
+.local-header { display: flex; justify-content: space-between; align-items: start; gap: 12px; }
+.local-header h2 { font: 30px var(--font-display); margin: 0; }
+.local-header p { color: var(--ok); margin: 0 0 8px; }
+.local-panel button, #map-reset, .local-panel select { cursor: pointer; font: inherit; color: var(--fg); background: var(--surface-2); border: 1px solid var(--border); border-radius: 8px; padding: 8px 10px; }
+#local-close { font-size: 24px; line-height: 1; }
+#local-context, #local-count { color: var(--muted); font-size: 12px; }
+#state-label { display: flex; align-items: center; gap: 8px; margin: 14px 0; }
+#state-select { min-width: 0; max-width: 100%; flex: 1; }
+.local-filters { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 18px; }
+.local-filters button[aria-pressed="true"] { border-color: var(--ok); color: var(--ok); }
+.local-panel .feed { gap: 8px; }
+.local-panel .card { padding: 12px; }
+.local-panel .card .src { color: #aaa99f; }
+.local-panel h3.section-label { font-size: 14px; color: var(--muted); margin: 22px 0 10px; }
+.local-panel :focus-visible, #map-reset:focus-visible { outline: 2px solid var(--ok); outline-offset: 3px; }
+@media (min-width: 760px) { body.local-open main { margin-right: min(450px, 46vw); margin-left: auto; } }
+@media (max-width: 759px) {
+  .local-panel { top: auto; left: 0; width: 100%; height: 58dvh; max-height: 78dvh; padding: 18px 18px max(18px, env(safe-area-inset-bottom)); border: 1px solid var(--border); border-radius: 22px 22px 0 0; box-shadow: 0 -10px 40px #0008; }
+  .local-header h2 { font-size: 26px; }
+}
