@@ -47,8 +47,9 @@
   <section class="mapcard" id="mapa" aria-labelledby="maptitle">
     <h2 id="maptitle" class="sr" data-i18n="mapTitle">Mapa de apagões</h2>
     <label class="disaster-toggle"><input type="checkbox" id="disasters"> <span class="disaster-swatch" aria-hidden="true"></span><span data-i18n="disasters">Desastres</span></label>
+    <button id="map-reset" hidden>🌐</button>
     <div class="mapwrap">
-      <svg id="map" class="map" viewBox="0 0 1000 500" role="img" aria-label="Mapa-múndi"></svg>
+      <svg id="map" class="map" viewBox="0 0 1000 500" role="group" aria-label="Mapa-múndi"></svg>
       <aside class="chips" id="chips" aria-label="Países com apagões"></aside>
     </div>
     <div class="legend" id="legend" aria-live="polite"></div>
@@ -81,6 +82,15 @@
   <a href="#fontes" data-i18n="navSrc">Fontes</a>
 </nav>
 
+<aside id="local-panel" class="local-panel" role="region" aria-labelledby="local-title" hidden>
+  <div class="local-header"><div><p id="local-eyebrow"></p><h2 id="local-title" tabindex="-1"></h2></div><button id="local-close" type="button">×</button></div>
+  <p id="local-context"></p>
+  <button id="local-parent" hidden></button>
+  <label id="state-label" hidden><span id="state-label-text"></span> <select id="state-select"></select></label>
+  <div id="local-filters" class="local-filters"></div>
+  <p id="local-count" role="status" aria-live="polite"></p>
+  <div id="local-items"></div>
+</aside>
 <script src="app.js" type="module"></script>
 </body>
 </html>
