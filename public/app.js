@@ -61,7 +61,10 @@ function renderMap() {
   document.getElementById('map-reset').hidden = !zoom;
   if (zoom) drawStates(svg, drilldown, (s) => localPanel.open(s), selected.state);
   const visible = document.getElementById('disasters').checked ? [...power, ...data.items.filter((i) => i.kind === 'disaster')] : power;
-  const markers = visible.filter((i) => Number.isFinite(i.lat) && Number.isFinite(i.lon))
+  // Com zoom no país/estado, só mostra pontos desse país com localização precisa (estado/condado/exata).
+  // Pontos de país ficam na lista e nos chips, para não aparecerem sobre estados sem dados.
+  const inView = (i) => !zoom || (i.country === selected.country && i.precisao !== "pais" && i.state && (!selected.state || i.state === selected.state));
+  const markers = visible.filter((i) => Number.isFinite(i.lat) && Number.isFinite(i.lon) && inView(i))
     .map((i) => ({ ...i, label: `${i.title} · ${i.region} · ${i.source} · ${i.precisao}` }));
   if (markers.length) drawMarkers(svg, markers, (s) => localPanel.open(s), zoom ? 0.35 : 1);
   document.getElementById('maphint').textContent = markers.length ? T[lang].mapHint : T[lang].mapEmpty;

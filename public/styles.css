@@ -156,6 +156,12 @@ footer { margin-top: 28px; text-align: center; }
    - estados na mesma paleta vermelha dos países; hover só com ponteiro. */
 .map, .map * { -webkit-tap-highlight-color: transparent; }
 .map.zoomed .markers { pointer-events: none; }
-.map .states path { fill: rgba(241, 66, 66, 0.14); stroke: rgba(250, 250, 249, 0.28); }
-.map .states path.selected { fill: rgba(241, 66, 66, 0.5); }
-@media (hover: hover) { .map .states path:hover { fill: rgba(241, 66, 66, 0.35); } }
+
+/* Retrabalho de seleção (UX): estados neutros, só o contorno destaca o estado. */
+.map:focus, .map *:focus, .map :focus-visible { outline: none; }
+.map.zoomed .countries path { fill: #1B1A17 !important; }
+.map .states path { fill: rgba(250, 250, 249, 0.03); stroke: rgba(250, 250, 249, 0.3); stroke-width: .6; vector-effect: non-scaling-stroke; cursor: pointer; }
+.map .states path.selected { fill: rgba(61, 214, 140, 0.08); stroke: var(--ok); stroke-width: 1.6; }
+@media (hover: hover) { .map .states path:hover { stroke: var(--fg); stroke-width: 1.2; } }
+.map .markers circle { filter: drop-shadow(0 0 3px currentColor); }
+.map .markers circle:focus-visible { stroke: var(--ok); stroke-width: 1.5; }

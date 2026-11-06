@@ -83,7 +83,6 @@ export function drawMarkers(svg, markers, onSelect = null, scale = 1) {
     c.setAttribute('cy', y.toFixed(1));
     c.setAttribute('r', (r * scale).toFixed(1));
     c.setAttribute('data-count', m.count);
-    c.setAttribute('filter', 'url(#glow)');
     c.setAttribute('class', `marker ${m.severity || 'baixa'}${m.precisao === 'pais' ? ' marker-pais' : ''}${m.kind === 'disaster' ? ' marker-disaster' : ''}`);
     const t = document.createElementNS(SVGNS, 'title');
     t.textContent = m.label;
