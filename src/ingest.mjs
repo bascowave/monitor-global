@@ -1,7 +1,7 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { fetchKev } from './sources.mjs';
+import { SOURCE_FETCHERS } from './sources.mjs';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 export const DATA_FILE = path.resolve(here, '..', 'data', 'incidents.json');
@@ -10,8 +10,11 @@ export async function runIngest({ fetchFn = fetch, outFile = DATA_FILE } = {}) {
   const started = new Date().toISOString();
   const errors = [];
   let items = [];
-  try { items = items.concat(await fetchKev(fetchFn)); } catch (e) { errors.push({ source: 'CISA KEV', message: e.message }); }
-  items.sort((a, b) => (a.publishedAt < b.publishedAt ? 1 : -1));
+  for (const [source, fetcher] of SOURCE_FETCHERS) {
+    try { items.push(...await fetcher(fetchFn)); }
+    catch (e) { errors.push({ source, message: e.message }); }
+  }
+  items.sort((a, b) => b.publishedAt.localeCompare(a.publishedAt));
   const doc = { collectedAt: started, count: items.length, errors, items };
   await fs.mkdir(path.dirname(outFile), { recursive: true });
   await fs.writeFile(outFile, JSON.stringify(doc, null, 2), 'utf8');
