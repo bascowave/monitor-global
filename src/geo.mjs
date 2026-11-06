@@ -12,7 +12,12 @@ for (const [name, code] of Object.entries({ 'EUA': 'US', 'USA': 'US', 'UK': 'GB'
 export function resolveCountry(codeOrName) { return names.get(normalizeName(codeOrName)) ?? null; }
 export function resolveBrUf(uf) {
   const entry = ufs[String(uf ?? '').trim().toUpperCase()];
-  return entry ? { ...entry, country: 'BR', precisao: 'estado' } : null;
+  return entry ? { ...entry, country: 'BR', state: String(uf).trim().toUpperCase(), precisao: 'estado' } : null;
+}
+export const US_STATE_FIPS = {"01":"AL","02":"AK","04":"AZ","05":"AR","06":"CA","08":"CO","09":"CT","10":"DE","11":"DC","12":"FL","13":"GA","15":"HI","16":"ID","17":"IL","18":"IN","19":"IA","20":"KS","21":"KY","22":"LA","23":"ME","24":"MD","25":"MA","26":"MI","27":"MN","28":"MS","29":"MO","30":"MT","31":"NE","32":"NV","33":"NH","34":"NJ","35":"NM","36":"NY","37":"NC","38":"ND","39":"OH","40":"OK","41":"OR","42":"PA","44":"RI","45":"SC","46":"SD","47":"TN","48":"TX","49":"UT","50":"VT","51":"VA","53":"WA","54":"WV","55":"WI","56":"WY","72":"PR"};
+export function resolveUsState(fips) {
+  const value = String(fips ?? '').trim();
+  return /^\d{1,5}$/.test(value) ? US_STATE_FIPS[value.padStart(5, '0').slice(0, 2)] : undefined;
 }
 export function resolveUsCounty(fips) {
   const key = String(fips ?? '').trim();
@@ -24,7 +29,7 @@ export function resolveUsCounty(fips) {
 export function attachGeo(item, geo = {}) {
   if (!geo) return { ...item };
   const country = resolveCountry(geo.country)?.country;
-  const result = { ...item, ...(country ? { country } : {}) };
+  const result = { ...item, ...(country ? { country } : {}), ...(geo.state ? { state: geo.state } : {}) };
   if (Number.isFinite(geo.lat) && Math.abs(geo.lat) <= 90 && Number.isFinite(geo.lon) && Math.abs(geo.lon) <= 180 && ['pais','estado','condado','exata'].includes(geo.precisao)) {
     Object.assign(result, { lat: geo.lat, lon: geo.lon, precisao: geo.precisao });
   }
