@@ -21,8 +21,8 @@ export function geometryToPath(geom) {
 export function addDefs(svg) {
   const defs = document.createElementNS(SVGNS, 'defs');
   defs.innerHTML = `
-    <filter id="glow" x="-200%" y="-200%" width="500%" height="500%">
-      <feGaussianBlur stdDeviation="6" result="b"/>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="b"/>
       <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
     </filter>`;
   svg.appendChild(defs);
@@ -73,7 +73,7 @@ export function clusterMarkers(markers) {
 export function drawMarkers(svg, markers, onSelect = null, scale = 1) {
   const g = document.createElementNS(SVGNS, 'g');
   g.setAttribute('class', 'markers');
-  g.setAttribute('filter', 'url(#glow)');
+  g.setAttribute('class', 'markers');
   for (const m of clusterMarkers(markers)) {
     const [x, y] = project([m.lon, m.lat]);
     const c = document.createElementNS(SVGNS, 'circle');
@@ -83,6 +83,7 @@ export function drawMarkers(svg, markers, onSelect = null, scale = 1) {
     c.setAttribute('cy', y.toFixed(1));
     c.setAttribute('r', (r * scale).toFixed(1));
     c.setAttribute('data-count', m.count);
+    c.setAttribute('filter', 'url(#glow)');
     c.setAttribute('class', `marker ${m.severity || 'baixa'}${m.precisao === 'pais' ? ' marker-pais' : ''}${m.kind === 'disaster' ? ' marker-disaster' : ''}`);
     const t = document.createElementNS(SVGNS, 'title');
     t.textContent = m.label;

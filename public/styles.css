@@ -126,8 +126,6 @@ footer { margin-top: 28px; text-align: center; }
 /* Navegação local: o mapa permanece utilizável com o painel aberto. */
 .map [role="button"] { cursor: pointer; }
 .map [role="button"]:focus-visible { outline: none; stroke: var(--ok); stroke-width: 1.5; }
-.map .states path { fill: #283c35; stroke: #b2c4bb; stroke-width: .3; vector-effect: non-scaling-stroke; }
-.map .states path:hover, .map .states path.selected { fill: #426952; }
 .map .countries path:hover { fill: #37443c !important; }
 .local-panel { position: fixed; z-index: 20; right: 0; top: 62px; bottom: 0; width: min(430px, 44vw); padding: 22px; overflow-y: auto; background: #151612; border-left: 1px solid var(--border); box-shadow: -12px 0 40px #0006; }
 [hidden] { display: none !important; }
@@ -151,3 +149,13 @@ footer { margin-top: 28px; text-align: center; }
   .local-panel { top: auto; left: 0; width: 100%; height: 58dvh; max-height: 78dvh; padding: 18px 18px max(18px, env(safe-area-inset-bottom)); border: 1px solid var(--border); border-radius: 22px 22px 0 0; box-shadow: 0 -10px 40px #0008; }
   .local-header h2 { font-size: 26px; }
 }
+
+/* Correções de seleção no mapa:
+   - com zoom no estado, os pontos não bloqueiam o clique no estado;
+   - sem destaque de toque do navegador;
+   - estados na mesma paleta vermelha dos países; hover só com ponteiro. */
+.map, .map * { -webkit-tap-highlight-color: transparent; }
+.map.zoomed .markers { pointer-events: none; }
+.map .states path { fill: rgba(241, 66, 66, 0.14); stroke: rgba(250, 250, 249, 0.28); }
+.map .states path.selected { fill: rgba(241, 66, 66, 0.5); }
+@media (hover: hover) { .map .states path:hover { fill: rgba(241, 66, 66, 0.35); } }

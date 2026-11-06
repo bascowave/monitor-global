@@ -56,6 +56,7 @@ function renderMap() {
   const selected = localPanel.selection;
   const drilldown = localPanel.geo;
   const zoom = drilldown && !selected?.items;
+  svg.classList.toggle('zoomed', zoom);
   svg.setAttribute('viewBox', zoom ? (selected.country === 'BR' ? '280 225 145 120' : '110 45 220 145') : '0 0 1000 500');
   document.getElementById('map-reset').hidden = !zoom;
   if (zoom) drawStates(svg, drilldown, (s) => localPanel.open(s), selected.state);
