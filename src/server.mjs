@@ -7,7 +7,7 @@ import { DATA_FILE } from './ingest.mjs';
 const here = path.dirname(fileURLToPath(import.meta.url));
 const PUBLIC = path.resolve(here, '..', 'public');
 const PORT = Number(process.env.PORT || 3000);
-const TYPES = { '.html': 'text/html; charset=utf-8', '.css': 'text/css; charset=utf-8', '.js': 'application/javascript; charset=utf-8' };
+const TYPES = { '.geojson': 'application/geo+json; charset=utf-8', '.html': 'text/html; charset=utf-8', '.css': 'text/css; charset=utf-8', '.js': 'application/javascript; charset=utf-8' };
 
 export function createServer({ dataFile = DATA_FILE, publicDir = PUBLIC } = {}) {
   return http.createServer(async (req, res) => {

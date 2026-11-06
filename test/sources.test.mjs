@@ -16,18 +16,18 @@ const mockText = (text) => async () => ({ ok: true, text: async () => text });
 const start = '2026-11-05T12:00:00Z';
 const kev = { vulnerabilities: [{ cveID: 'CVE-2026-1234', vulnerabilityName: 'Falha explorada', dateAdded: '2026-11-05', vendorProject: 'Vendor', product: 'Product', knownRansomwareCampaignUse: 'Known', dueDate: '2026-11-20' }] };
 const radarOutages = { success: true, result: { annotations: [
-  { id: 'one', description: 'Falta de energia', startDate: start, outage: { outageCause: 'POWER_OUTAGE' }, locationsDetails: [{ name: 'Brasil' }] },
+  { id: 'one', description: 'Falta de energia', startDate: start, outage: { outageCause: 'POWER_OUTAGE' }, locationsDetails: [{ code: 'BR', name: 'Brasil' }] },
   { id: 'two', description: 'Cabo rompido', startDate: start, outage: { outageCause: 'CABLE_CUT' }, scope: 'Portugal' },
   { id: 'three', description: 'Ataque DDoS', startDate: start, outage: { outageCause: 'DDOS_ATTACK' } },
 ] } };
 const attacks = { success: true, result: { summary_0: { GET: '90.25', POST: '9.75' }, meta: { dateRange: [{ startTime: '2026-10-29T12:00:00Z', endTime: start }] } } };
-const ioda = { error: null, data: [{ datasource: 'bgp', entity: { code: 'BR', name: 'Brazil' }, time: 1793880000, level: 'critical' }] };
+const ioda = { error: null, data: [{ datasource: 'bgp', entity: { type: 'country', code: 'BR', name: 'Brazil' }, time: 1793880000, level: 'critical' }] };
 const csvHeader = 'cod_perturbacao;din_interrupcaocarga;id_subsistema;nom_subsistema;id_estado;nom_agente;val_cargainterrompida_mw';
 const ons = `\uFEFF${csvHeader}\r\n1/2026;2026-11-04 12:00:00;SE;SUDESTE;SP;Agente A;100.5\r\n1/2026;2026-11-04 12:00:00;SE;SUDESTE;RJ;Agente B;50\r\n2/2026;2026-11-05 13:00:00;NE;NORDESTE;BA;Agente C;25\r\n`;
 const odin = { outage: [{ communityDescriptor: '04025', metersAffected: 12, reportedStartTime: start, estimatedRestorationTime: null, names: [{ nameType: 'UtilityName', name: 'Utility' }] }] };
-const usgs = { features: [{ id: 'abc', properties: { time: Date.parse(start), title: 'M 6.1 — Fiji', place: 'Fiji', url: 'https://earthquake.usgs.gov/example' } }] };
+const usgs = { features: [{ id: 'abc', geometry: { type: 'Point', coordinates: [178.4, -18.1, 10] }, properties: { time: Date.parse(start), title: 'M 6.1 — Fiji', place: 'Fiji', url: 'https://earthquake.usgs.gov/example' } }] };
 const gdelt = { articles: [{ title: 'Apagão', url: 'https://example.org/noticia?a=1&b=2', seendate: '20261105T120000Z', sourcecountry: 'Brazil' }] };
-const gdacsItem = (id = 1, date = 'Thu, 05 Nov 2026 12:00:00 GMT') => `<item><title><![CDATA[Terremoto & alerta]]></title><link>https://www.gdacs.org/report?eventid=${id}&amp;eventtype=EQ</link><pubDate>${date}</pubDate><description>&lt;b&gt;Alerta&lt;/b&gt; &#xE1; &#225;</description><gdacs:country>Fiji</gdacs:country><guid>EQ${id}</guid></item>`;
+const gdacsItem = (id = 1, date = 'Thu, 05 Nov 2026 12:00:00 GMT') => `<item><title><![CDATA[Terremoto & alerta]]></title><link>https://www.gdacs.org/report?eventid=${id}&amp;eventtype=EQ</link><pubDate>${date}</pubDate><description>&lt;b&gt;Alerta&lt;/b&gt; &#xE1; &#225;</description><gdacs:country>Fiji</gdacs:country><gdacs:iso3>FJI</gdacs:iso3><geo:lat>-18.1</geo:lat><geo:long>178.4</geo:long><guid>EQ${id}</guid></item>`;
 const gdacs = `<rss><channel>${gdacsItem()}</channel></rss>`;
 
 function normalized(items, source, kind, status = 'confirmado') {
@@ -112,11 +112,15 @@ test('IODA usa Unix absoluto nos últimos 7 dias e ID estável', async () => {
 test('ONS parseia BOM, CRLF, agrupa perturbações e ordena por data', async () => {
   const items = await fetchOnsInterruptions(mockText(ons));
   normalized(items, 'ONS', 'power');
-  assert.equal(items.length, 2);
+  assert.equal(items.length, 3);
   assert.match(items[0].id, /^ons-2\/2026-/);
   assert.equal(items[0].publishedAt, '2026-11-05T16:00:00.000Z');
-  assert.match(items[1].title, /150.5 MW/);
-  assert.match(items[1].region, /Brasil.*SP.*RJ/);
+  assert.match(items[1].title, /100.5 MW/);
+  assert.match(items[1].region, /Brasil.*SP/);
+  assert.match(items[2].region, /Brasil.*RJ/);
+  assert.equal(items[1].mw, 100.5);
+  assert.equal(items[1].severity, 'alta');
+  assert.equal(items[1].precisao, 'estado');
   assert.equal(items[0].sourceUrl, 'https://dados.ons.org.br/dataset/interrupcao_carga');
 });
 
@@ -138,7 +142,7 @@ test('ODIN filtra ETR stale, aceita objeto ert, ordena medidores e mantém ID', 
   normalized(items, 'ODIN', 'power');
   assert.equal(items.length, 2);
   assert.equal(items[0].id, `odin-00002-${start}`);
-  assert.equal(items[0].region, 'EUA');
+  assert.equal(items[0].region, 'EUA / FIPS 00002');
   const undated = await fetchOdinOutages(mockJson({ outage: [{ ...odin.outage[0], reportedStartTime: null, mrid: 'abc' }] }));
   assert.equal(undated[0].id, 'odin-04025-abc');
   assert.equal(undated[0].timeBasis, 'observed');
@@ -212,8 +216,32 @@ test('ingest mantém sucesso parcial, ordenação e Radar sem token fora dos err
   } });
   assert.equal(visited.length, 7);
   assert.deepEqual(doc.errors, [{ source: 'IODA', message: 'IODA HTTP 503' }]);
+  const power = doc.items.filter((i) => i.kind === 'power');
+  assert.ok(power.filter((i) => Number.isFinite(i.lat) && Number.isFinite(i.lon)).length / power.length >= 0.8);
   assert.equal(doc.count, doc.items.length);
   assert.equal(new Set(doc.items.map((i) => i.source)).size, 6);
   assert.deepEqual(doc.items.map((i) => i.publishedAt), doc.items.map((i) => i.publishedAt).sort().reverse());
   assert.deepEqual(JSON.parse(await readFile(outFile, 'utf8')), doc);
+});
+
+test('smoke: ingest de todas as fontes com mocks geolocaliza ao menos 80% dos apagões', async (t) => {
+  process.env.CLOUDFLARE_RADAR_TOKEN = 'fixture-token';
+  const dir = await mkdtemp(path.join(process.cwd(), '.test-ingest-'));
+  t.after(() => rm(dir, { recursive: true, force: true }));
+  const doc = await runIngest({ outFile: path.join(dir, 'incidents.json'), fetchFn: async (url) => {
+    if (url.includes('cisa.gov')) return { ok: true, json: async () => kev };
+    if (url.includes('annotations/outages')) return { ok: true, json: async () => radarOutages };
+    if (url.includes('attacks/layer7')) return { ok: true, json: async () => attacks };
+    if (url.includes('ioda.')) return { ok: true, json: async () => ioda };
+    if (url.includes('ons-aws')) return { ok: true, text: async () => ons };
+    if (url.includes('odin.')) return { ok: true, json: async () => odin };
+    if (url.includes('gdeltproject')) return { ok: true, json: async () => gdelt };
+    if (url.includes('usgs.gov')) return { ok: true, json: async () => usgs };
+    if (url.includes('gdacs.org')) return { ok: true, text: async () => gdacs };
+    assert.fail(`URL inesperada: ${url}`);
+  } });
+  assert.deepEqual(doc.errors, []);
+  const power = doc.items.filter((i) => i.kind === 'power');
+  assert.ok(power.length >= 7);
+  assert.ok(power.filter((i) => Number.isFinite(i.lat) && Number.isFinite(i.lon)).length / power.length >= 0.8);
 });

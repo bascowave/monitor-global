@@ -1,3 +1,4 @@
+import { attachGeo, resolveCountry, resolveBrUf, resolveUsCounty, countriesInText } from './geo.mjs';
 import { createHash } from 'node:crypto';
 import https from 'node:https';
 import { URL as NodeURL } from 'node:url';
@@ -106,14 +107,18 @@ export async function fetchCloudflareOutages(fetchFn = fetch) {
     const publishedAt = iso(o.startDate);
     if (!publishedAt) return [];
     const cause = o.outage?.outageCause ?? '';
-    return [{
+    const details = o.locationsDetails ?? [];
+    const explicit = [...details.map((l) => resolveCountry(l.code) || resolveCountry(l.name)), ...(o.locations ?? []).map((l) => resolveCountry(typeof l === 'string' ? l : l.code))].filter(Boolean);
+    const geos = [...new Map((explicit.length ? explicit : countriesInText(`${o.description || ''} ${o.scope || ''}`)).map((g) => [g.country, g])).values()];
+    const item = {
       id: `cloudflare-outage-${o.id ?? hash(`${o.description}-${publishedAt}`)}`,
       kind: /attack|ddos/i.test(cause) ? 'cyber' : 'power',
       title: o.description || `Interrupção de conectividade: ${cause || 'causa não informada'}`,
-      region: o.scope || o.locationsDetails?.map((l) => l.name).join(', ') || o.locations?.join(', ') || 'Global',
+      region: details.map((l) => l.name || l.code).join(', ') || o.locations?.join(', ') || o.scope || 'Global',
       publishedAt, source: 'Cloudflare Radar',
       sourceUrl: o.linkedUrl || 'https://radar.cloudflare.com/outage-center', status: 'confirmado',
-    }];
+    };
+    return geos.length ? geos.map((geo) => attachGeo({ ...item, id: `${item.id}-${geo.country}` }, geo)) : [item];
   });
 }
 
@@ -146,12 +151,14 @@ export async function fetchIodaAlerts(fetchFn = fetch) {
   return alerts.slice(0, 100).flatMap((a) => {
     const publishedAt = iso(a.time == null ? null : Number(a.time) * 1000);
     if (!publishedAt || !a.entity?.code || !a.datasource) return [];
-    return [{
+    const geo = resolveCountry(a.entity.type === 'country' ? a.entity.code : a.entity.attrs?.country_code);
+    return [attachGeo({
       id: `ioda-${a.datasource}-${a.entity.code}-${a.time}`, kind: 'power',
       title: `Queda de conectividade: ${a.entity.name || a.entity.code} (${a.level || 'alerta'}, ${a.datasource})`,
+      severity: a.level === 'critical' ? 'alta' : a.level === 'warning' ? 'media' : 'baixa',
       region: a.entity.name || a.entity.code, publishedAt, source: 'IODA',
       sourceUrl: 'https://ioda.inetintel.cc.gatech.edu', status: 'confirmado',
-    }];
+    }, geo)];
   });
 }
 
@@ -168,19 +175,20 @@ export async function fetchOnsInterruptions(fetchFn = fetch) {
     // O CSV não traz fuso; usamos explicitamente o horário de Brasília (UTC-3).
     const publishedAt = iso(`${row.din_interrupcaocarga.replace(' ', 'T')}-03:00`);
     if (!row.cod_perturbacao || !publishedAt) continue;
-    const id = `ons-${row.cod_perturbacao}-${publishedAt}`;
-    const event = events.get(id) ?? { id, publishedAt, regions: new Set(), agents: new Set(), mw: 0 };
+    const uf = (row.id_estado || '').toUpperCase();
+    const id = `ons-${row.cod_perturbacao}-${publishedAt}-${uf || 'BR'}`;
+    const event = events.get(id) ?? { id, publishedAt, uf, regions: new Set(), agents: new Set(), mw: 0 };
     event.regions.add([row.nom_subsistema || row.id_subsistema, row.id_estado].filter(Boolean).join(' / '));
     if (row.nom_agente) event.agents.add(row.nom_agente);
     event.mw += Number(row.val_cargainterrompida_mw.replace(',', '.')) || 0;
     events.set(id, event);
   }
-  return [...events.values()].sort(newest).slice(0, 200).map((e) => ({
-    id: e.id, kind: 'power',
+  return [...events.values()].sort(newest).slice(0, 200).map((e) => attachGeo({
+    id: e.id, kind: 'power', mw: Number(e.mw.toFixed(2)), severity: e.mw >= 100 ? 'alta' : e.mw >= 20 ? 'media' : 'baixa',
     title: `Interrupção de carga: ${Number(e.mw.toFixed(2))} MW${e.agents.size ? ` — ${[...e.agents].join(', ')}` : ''}`,
     region: `Brasil / ${[...e.regions].filter(Boolean).join(', ')}`, publishedAt: e.publishedAt,
     source: 'ONS', sourceUrl: 'https://dados.ons.org.br/dataset/interrupcao_carga', status: 'confirmado',
-  }));
+  }, resolveBrUf(e.uf) || resolveCountry('BR')));
 }
 
 export async function fetchOdinOutages(fetchFn = fetch) {
@@ -192,14 +200,17 @@ export async function fetchOdinOutages(fetchFn = fetch) {
   }).sort((a, b) => Number(b.metersAffected) - Number(a.metersAffected)).slice(0, 100).map((o) => {
     const utility = o.names?.find((n) => n.nameType === 'UtilityName')?.name || 'Concessionária não informada';
     const start = iso(o.reportedStartTime) || iso(o.outageArea?.earliestReportedTime);
-    return {
+    const geo = resolveUsCounty(o.communityDescriptor);
+    const clientes = Number(o.metersAffected);
+    return attachGeo({
       id: `odin-${o.communityDescriptor}-${o.reportedStartTime || o.mrid || o.MRID || hash(utility)}`,
       kind: 'power', title: `Apagão: ${o.metersAffected} medidores afetados — ${utility}`,
-      region: 'EUA', publishedAt: start || new Date(now).toISOString(),
+      clientes, severity: clientes >= 10000 ? 'alta' : clientes >= 1000 ? 'media' : 'baixa',
+      region: geo ? `${geo.name} / ${geo.state}` : `EUA / FIPS ${o.communityDescriptor}`, publishedAt: start || new Date(now).toISOString(),
       // Sem início informado, publishedAt representa o momento da observação.
       ...(start ? {} : { timeBasis: 'observed' }),
       source: 'ODIN', sourceUrl: 'https://odin.ornl.gov', status: 'confirmado',
-    };
+    }, { ...geo, country: 'US' });
   });
 }
 
@@ -245,12 +256,13 @@ export async function fetchUsgsEarthquakes(fetchFn = fetch) {
   return array(json.features, 'USGS').flatMap((f) => {
     const publishedAt = iso(f.properties?.time);
     if (!f.id || !publishedAt) return [];
-    return [{
+    const [lon, lat] = f.geometry?.coordinates ?? [];
+    return [attachGeo({
       id: `usgs-${f.id}`, kind: 'disaster',
       title: f.properties.title || `Terremoto M ${f.properties.mag} — ${f.properties.place}`,
       region: f.properties.place || 'Global', publishedAt, source: 'USGS',
       sourceUrl: f.properties.url || `https://earthquake.usgs.gov/earthquakes/eventpage/${f.id}`, status: 'confirmado',
-    }];
+    }, { lon, lat, precisao: 'exata', country: countriesInText(f.properties.place)[0]?.country })];
   });
 }
 
@@ -273,11 +285,23 @@ export async function fetchGdacsAlerts(fetchFn = fetch) {
     const sourceUrl = tag('link');
     const publishedAt = iso(tag('pubDate'));
     if (!title || !sourceUrl || !publishedAt) return [];
-    return [{
+    const country = resolveCountry(tag('gdacs:iso3')) || resolveCountry(tag('gdacs:country'));
+    const numberTag = (name) => tag(name) === '' ? NaN : Number(tag(name));
+    let lat = numberTag('geo:lat'), lon = numberTag('geo:long');
+    if (!Number.isFinite(lat) || !Number.isFinite(lon)) {
+      const bbox = tag('gdacs:bbox').split(/[ ,;]+/).map(Number);
+      if (bbox.length === 4 && bbox.every(Number.isFinite)) {
+        // GDACS: minLon maxLon minLat maxLat (ordem do RSS).
+        lon = (((bbox[0] + bbox[1]) / 2 + 180) % 360 + 360) % 360 - 180;
+        lat = (bbox[2] + bbox[3]) / 2;
+      }
+    }
+    const geo = Number.isFinite(lat) && Math.abs(lat) <= 90 && Number.isFinite(lon) && Math.abs(lon) <= 180 ? { country: country?.country, lat, lon, precisao: 'exata' } : country;
+    return [attachGeo({
       id: `gdacs-${hash(tag('guid') || sourceUrl)}`, kind: 'disaster', title,
       region: tag('gdacs:country') || 'Global', publishedAt, description: tag('description'),
       source: 'GDACS', sourceUrl, status: 'confirmado',
-    }];
+    }, geo)];
   }).sort(newest).slice(0, 50);
 }
 

@@ -1,0 +1,3731 @@
+{
+  "AD": {
+    "iso3": "AND",
+    "name": "Andorra",
+    "names": [
+      "AD",
+      "Andorra",
+      "Principado de Andorra",
+      "Principality of Andorra",
+      "Principat d'Andorra"
+    ],
+    "lat": 42.5,
+    "lon": 1.5
+  },
+  "AE": {
+    "iso3": "ARE",
+    "name": "United Arab Emirates",
+    "names": [
+      "AE",
+      "Emirados Árabes Unidos",
+      "Emirates",
+      "Emiratos Árabes Unidos",
+      "UAE",
+      "United Arab Emirates"
+    ],
+    "lat": 23.86863,
+    "lon": 54.20671
+  },
+  "AF": {
+    "iso3": "AFG",
+    "name": "Afghanistan",
+    "names": [
+      "AF",
+      "Afeganistão",
+      "Afganistán",
+      "Afghanistan",
+      "Afġānistān",
+      "Islamic Republic of Afghanistan",
+      "República Islámica de Afganistán",
+      "República Islâmica do Afeganistão"
+    ],
+    "lat": 33.8564,
+    "lon": 66.08669
+  },
+  "AG": {
+    "iso3": "ATG",
+    "name": "Antigua and Barbuda",
+    "names": [
+      "AG",
+      "Antigua and Barbuda",
+      "Antigua e Barbuda",
+      "Antigua y Barbuda",
+      "Antígua e Barbuda"
+    ],
+    "lat": 17.05,
+    "lon": -61.8
+  },
+  "AI": {
+    "iso3": "AIA",
+    "name": "Anguilla",
+    "names": [
+      "AI",
+      "Anguila",
+      "Anguilla"
+    ],
+    "lat": 18.25,
+    "lon": -63.16666666
+  },
+  "AL": {
+    "iso3": "ALB",
+    "name": "Albania",
+    "names": [
+      "AL",
+      "Albania",
+      "Albânia",
+      "Republic of Albania",
+      "República da Albânia",
+      "República de Albania",
+      "Shqipnia",
+      "Shqipëri",
+      "Shqipëria"
+    ],
+    "lat": 41.14135,
+    "lon": 20.03243
+  },
+  "AM": {
+    "iso3": "ARM",
+    "name": "Armenia",
+    "names": [
+      "AM",
+      "Armenia",
+      "Arménia",
+      "Hayastan",
+      "Republic of Armenia",
+      "República da Arménia",
+      "República de Armenia",
+      "Հայաստանի Հանրապետություն"
+    ],
+    "lat": 40.21661,
+    "lon": 45.00029
+  },
+  "AO": {
+    "iso3": "AGO",
+    "name": "Angola",
+    "names": [
+      "AO",
+      "Angola",
+      "Republic of Angola",
+      "República de Angola",
+      "ʁɛpublika de an'ɡɔla"
+    ],
+    "lat": -12.24587,
+    "lon": 17.47057
+  },
+  "AQ": {
+    "iso3": "ATA",
+    "name": "Antarctica",
+    "names": [
+      "AQ",
+      "Antarctica",
+      "Antártica",
+      "Antártida"
+    ],
+    "lat": -80.49198,
+    "lon": 20.79294
+  },
+  "AR": {
+    "iso3": "ARG",
+    "name": "Argentina",
+    "names": [
+      "AR",
+      "Argentina",
+      "Argentine Republic",
+      "República Argentina"
+    ],
+    "lat": -35.44682,
+    "lon": -65.17536
+  },
+  "AS": {
+    "iso3": "ASM",
+    "name": "American Samoa",
+    "names": [
+      "AS",
+      "Amelika Sāmoa",
+      "American Samoa",
+      "Amerika Sāmoa",
+      "Samoa Americana",
+      "Samoa americana",
+      "Sāmoa Amelika"
+    ],
+    "lat": -14.33333333,
+    "lon": -170
+  },
+  "AT": {
+    "iso3": "AUT",
+    "name": "Austria",
+    "names": [
+      "AT",
+      "Austria",
+      "Oesterreich",
+      "Osterreich",
+      "Republic of Austria",
+      "República da Áustria",
+      "República de Austria",
+      "Áustria"
+    ],
+    "lat": 47.61395,
+    "lon": 14.07616
+  },
+  "AU": {
+    "iso3": "AUS",
+    "name": "Australia",
+    "names": [
+      "AU",
+      "Australia",
+      "Austrália",
+      "Commonwealth of Australia",
+      "Comunidade da Austrália",
+      "Mancomunidad de Australia"
+    ],
+    "lat": -25.73065,
+    "lon": 134.50278
+  },
+  "AW": {
+    "iso3": "ABW",
+    "name": "Aruba",
+    "names": [
+      "AW",
+      "Aruba"
+    ],
+    "lat": 12.5,
+    "lon": -69.96666666
+  },
+  "AX": {
+    "iso3": "ALA",
+    "name": "Åland Islands",
+    "names": [
+      "AX",
+      "Aaland",
+      "Ahvenanmaa",
+      "Aland",
+      "Alandia",
+      "Alândia",
+      "Ilhas Åland",
+      "Islas Åland",
+      "Åland Islands"
+    ],
+    "lat": 60.116667,
+    "lon": 19.9
+  },
+  "AZ": {
+    "iso3": "AZE",
+    "name": "Azerbaijan",
+    "names": [
+      "AZ",
+      "Azerbaijan",
+      "Azerbaiyán",
+      "Azerbeijão",
+      "Azərbaycan Respublikası",
+      "Republic of Azerbaijan",
+      "República de Azerbaiyán",
+      "República do Azerbaijão"
+    ],
+    "lat": 40.22069,
+    "lon": 47.55391
+  },
+  "BA": {
+    "iso3": "BIH",
+    "name": "Bosnia and Herzegovina",
+    "names": [
+      "BA",
+      "Bosnia and Herzegovina",
+      "Bosnia y Herzegovina",
+      "Bosnia-Herzegovina",
+      "Bósnia e Herzegovina",
+      "Босна и Херцеговина"
+    ],
+    "lat": 44.18077,
+    "lon": 17.81688
+  },
+  "BB": {
+    "iso3": "BRB",
+    "name": "Barbados",
+    "names": [
+      "BB",
+      "Barbados"
+    ],
+    "lat": 13.16666666,
+    "lon": -59.53333333
+  },
+  "BD": {
+    "iso3": "BGD",
+    "name": "Bangladesh",
+    "names": [
+      "BD",
+      "Bangladesh",
+      "Gônôprôjatôntri Bangladesh",
+      "People's Republic of Bangladesh",
+      "República Popular de Bangladesh",
+      "República Popular do Bangladesh"
+    ],
+    "lat": 23.83946,
+    "lon": 90.26793
+  },
+  "BE": {
+    "iso3": "BEL",
+    "name": "Belgium",
+    "names": [
+      "BE",
+      "Belgie",
+      "Belgien",
+      "Belgique",
+      "Belgium",
+      "België",
+      "Bélgica",
+      "Kingdom of Belgium",
+      "Koninkrijk België",
+      "Königreich Belgien",
+      "Reino da Bélgica",
+      "Reino de Bélgica",
+      "Royaume de Belgique"
+    ],
+    "lat": 50.65244,
+    "lon": 4.58083
+  },
+  "BF": {
+    "iso3": "BFA",
+    "name": "Burkina Faso",
+    "names": [
+      "BF",
+      "Burkina Faso"
+    ],
+    "lat": 12.31165,
+    "lon": -1.77654
+  },
+  "BG": {
+    "iso3": "BGR",
+    "name": "Bulgaria",
+    "names": [
+      "BG",
+      "Bulgaria",
+      "Bulgária",
+      "Republic of Bulgaria",
+      "República da Bulgária",
+      "República de Bulgaria",
+      "Република България"
+    ],
+    "lat": 42.75312,
+    "lon": 25.19511
+  },
+  "BH": {
+    "iso3": "BHR",
+    "name": "Bahrain",
+    "names": [
+      "BH",
+      "Bahrain",
+      "Bahrein",
+      "Kingdom of Bahrain",
+      "Mamlakat al-Baḥrayn",
+      "Reino de Bahrein",
+      "Reino do Bahrein"
+    ],
+    "lat": 26,
+    "lon": 50.55
+  },
+  "BI": {
+    "iso3": "BDI",
+    "name": "Burundi",
+    "names": [
+      "BI",
+      "Burundi",
+      "Republic of Burundi",
+      "Republika y'Uburundi",
+      "República de Burundi",
+      "República do Burundi",
+      "République du Burundi"
+    ],
+    "lat": -3.37739,
+    "lon": 29.91389
+  },
+  "BJ": {
+    "iso3": "BEN",
+    "name": "Benin",
+    "names": [
+      "BJ",
+      "Benin",
+      "Benín",
+      "Republic of Benin",
+      "República de Benin",
+      "República do Benin",
+      "République du Bénin"
+    ],
+    "lat": 9.64743,
+    "lon": 2.33738
+  },
+  "BL": {
+    "iso3": "BLM",
+    "name": "Saint Barthélemy",
+    "names": [
+      "BL",
+      "Colectividad de San Barthélemy",
+      "Coletividade de Saint Barthélemy",
+      "Collectivity of Saint Barthélemy",
+      "Collectivité de Saint-Barthélemy",
+      "Saint Barthélemy",
+      "San Bartolomé",
+      "St. Barthelemy",
+      "São Bartolomeu"
+    ],
+    "lat": 18.5,
+    "lon": -63.41666666
+  },
+  "BM": {
+    "iso3": "BMU",
+    "name": "Bermuda",
+    "names": [
+      "BM",
+      "Bermuda",
+      "Bermudas",
+      "Somers Isles",
+      "The Bermudas",
+      "The Islands of Bermuda"
+    ],
+    "lat": 32.33333333,
+    "lon": -64.75
+  },
+  "BN": {
+    "iso3": "BRN",
+    "name": "Brunei",
+    "names": [
+      "BN",
+      "Brunei",
+      "Brunei Darussalam",
+      "Nación de Brunei, Morada de la Paz",
+      "Nation of Brunei",
+      "Nation of Brunei, Abode of Peace",
+      "Nação do Brunei, Morada da Paz",
+      "the Abode of Peace"
+    ],
+    "lat": 4.69025,
+    "lon": 114.91511
+  },
+  "BO": {
+    "iso3": "BOL",
+    "name": "Bolivia",
+    "names": [
+      "BO",
+      "Bolivia",
+      "Bolivia, Plurinational State of",
+      "Bolívia",
+      "Buliwya",
+      "Buliwya Mamallaqta",
+      "Estado Plurinacional da Bolívia",
+      "Estado Plurinacional de Bolivia",
+      "Plurinational State of Bolivia",
+      "Tetã Volívia",
+      "Wuliwya",
+      "Wuliwya Suyu"
+    ],
+    "lat": -16.72899,
+    "lon": -64.64141
+  },
+  "BQ": {
+    "iso3": "BES",
+    "name": "Caribbean Netherlands",
+    "names": [
+      "BES islands",
+      "Bonaire Sint Eustatius and Saba",
+      "Bonaire, Saba e Santo Eustáquio",
+      "Bonaire, San Eustaquio y Saba",
+      "Bonaire, Sint Eustatius and Saba",
+      "Caribbean Netherlands",
+      "Caribe Neerlandés",
+      "Países Baixos Caribenhos"
+    ],
+    "lat": 12.18,
+    "lon": -68.25
+  },
+  "BR": {
+    "iso3": "BRA",
+    "name": "Brazil",
+    "names": [
+      "BR",
+      "Brasil",
+      "Brazil",
+      "Federative Republic of Brazil",
+      "República Federativa del Brasil",
+      "República Federativa do Brasil"
+    ],
+    "lat": -10.80677,
+    "lon": -53.05434
+  },
+  "BS": {
+    "iso3": "BHS",
+    "name": "Bahamas",
+    "names": [
+      "BS",
+      "Bahamas",
+      "Commonwealth de las Bahamas",
+      "Commonwealth of the Bahamas",
+      "Comunidade das Bahamas"
+    ],
+    "lat": 25.51549,
+    "lon": -77.92997
+  },
+  "BT": {
+    "iso3": "BTN",
+    "name": "Bhutan",
+    "names": [
+      "BT",
+      "Bhutan",
+      "Bután",
+      "Butão",
+      "Kingdom of Bhutan",
+      "Reino de Bután",
+      "Reino do Butão"
+    ],
+    "lat": 27.42797,
+    "lon": 90.47242
+  },
+  "BV": {
+    "iso3": "BVT",
+    "name": "Bouvet Island",
+    "names": [
+      "BV",
+      "Bouvet Island",
+      "Bouvet-øya",
+      "Bouvetøya",
+      "Ilha Bouvet",
+      "Isla Bouvet"
+    ],
+    "lat": -54.43333333,
+    "lon": 3.4
+  },
+  "BW": {
+    "iso3": "BWA",
+    "name": "Botswana",
+    "names": [
+      "BW",
+      "Botswana",
+      "Lefatshe la Botswana",
+      "Republic of Botswana",
+      "República de Botswana",
+      "República do Botswana"
+    ],
+    "lat": -22.09971,
+    "lon": 23.77308
+  },
+  "BY": {
+    "iso3": "BLR",
+    "name": "Belarus",
+    "names": [
+      "BY",
+      "Belarus",
+      "Bielaruś",
+      "Bielorrusia",
+      "Bielorússia",
+      "Republic of Belarus",
+      "República da Bielorrússia",
+      "República de Belarús",
+      "Белоруссия",
+      "Республика Белоруссия"
+    ],
+    "lat": 53.50634,
+    "lon": 27.98135
+  },
+  "BZ": {
+    "iso3": "BLZ",
+    "name": "Belize",
+    "names": [
+      "BZ",
+      "Belice",
+      "Belize"
+    ],
+    "lat": 17.19709,
+    "lon": -88.70342
+  },
+  "CA": {
+    "iso3": "CAN",
+    "name": "Canada",
+    "names": [
+      "CA",
+      "Canada",
+      "Canadá"
+    ],
+    "lat": 61.46908,
+    "lon": -98.14238
+  },
+  "CC": {
+    "iso3": "CCK",
+    "name": "Cocos (Keeling) Islands",
+    "names": [
+      "CC",
+      "Cocos (Keeling) Islands",
+      "Cocos Islands",
+      "Ilhas Cocos (Keeling)",
+      "Islas Cocos o Islas Keeling",
+      "Keeling Islands",
+      "Territorio de los (Keeling) Islas Cocos",
+      "Territory of the Cocos (Keeling) Islands",
+      "Território dos Cocos (Keeling)"
+    ],
+    "lat": -12.5,
+    "lon": 96.83333333
+  },
+  "CD": {
+    "iso3": "COD",
+    "name": "DR Congo",
+    "names": [
+      "CD",
+      "Congo (Rep. Dem.)",
+      "Congo, the Democratic Republic of the",
+      "Congo-Kinshasa",
+      "DR Congo",
+      "DRC",
+      "Democratic Republic of Congo",
+      "Democratic Republic of the Congo",
+      "República Democrática del Congo",
+      "República Democrática do Congo"
+    ],
+    "lat": -2.85028,
+    "lon": 23.58296
+  },
+  "CF": {
+    "iso3": "CAF",
+    "name": "Central African Republic",
+    "names": [
+      "CF",
+      "Central African Republic",
+      "República Centro-Africana",
+      "República Centro-Africano",
+      "República Centroafricana",
+      "République centrafricaine"
+    ],
+    "lat": 6.54278,
+    "lon": 20.37435
+  },
+  "CG": {
+    "iso3": "COG",
+    "name": "Congo",
+    "names": [
+      "CG",
+      "Congo",
+      "Congo-Brazzaville",
+      "Republic of the Congo",
+      "República del Congo",
+      "República do Congo"
+    ],
+    "lat": -0.8378,
+    "lon": 15.13446
+  },
+  "CH": {
+    "iso3": "CHE",
+    "name": "Switzerland",
+    "names": [
+      "CH",
+      "Confederación Suiza",
+      "Confederação Suíça",
+      "Schweiz",
+      "Suisse",
+      "Suiza",
+      "Suíça",
+      "Svizra",
+      "Svizzera",
+      "Swiss Confederation",
+      "Switzerland"
+    ],
+    "lat": 46.79174,
+    "lon": 8.1183
+  },
+  "CI": {
+    "iso3": "CIV",
+    "name": "Ivory Coast",
+    "names": [
+      "CI",
+      "Costa de Marfil",
+      "Costa do Marfim",
+      "Cote d'Ivoire",
+      "Côte d'Ivoire",
+      "Ivory Coast",
+      "Republic of Côte d'Ivoire",
+      "República da Côte d'Ivoire",
+      "República de Côte d'Ivoire",
+      "République de Côte d'Ivoire"
+    ],
+    "lat": 7.55376,
+    "lon": -5.61204
+  },
+  "CK": {
+    "iso3": "COK",
+    "name": "Cook Islands",
+    "names": [
+      "CK",
+      "Cook Islands",
+      "Ilhas Cook",
+      "Islas Cook",
+      "Kūki 'Āirani"
+    ],
+    "lat": -21.23333333,
+    "lon": -159.76666666
+  },
+  "CL": {
+    "iso3": "CHL",
+    "name": "Chile",
+    "names": [
+      "CL",
+      "Chile",
+      "Republic of Chile",
+      "República de Chile",
+      "República do Chile"
+    ],
+    "lat": -39.04701,
+    "lon": -71.52064
+  },
+  "CM": {
+    "iso3": "CMR",
+    "name": "Cameroon",
+    "names": [
+      "CM",
+      "Camarões",
+      "Cameroon",
+      "Camerún",
+      "Republic of Cameroon",
+      "República de Camerún",
+      "República dos Camarões",
+      "République du Cameroun"
+    ],
+    "lat": 5.6631,
+    "lon": 12.61155
+  },
+  "CN": {
+    "iso3": "CHN",
+    "name": "China",
+    "names": [
+      "CN",
+      "China",
+      "People's Republic of China",
+      "República Popular da China",
+      "República Popular de China",
+      "Zhongguo",
+      "Zhonghua",
+      "Zhōngguó",
+      "Zhōnghuá Rénmín Gònghéguó",
+      "中华人民共和国"
+    ],
+    "lat": 36.55507,
+    "lon": 103.88361
+  },
+  "CO": {
+    "iso3": "COL",
+    "name": "Colombia",
+    "names": [
+      "CO",
+      "Colombia",
+      "Colômbia",
+      "Republic of Colombia",
+      "República da Colômbia",
+      "República de Colombia"
+    ],
+    "lat": 3.92721,
+    "lon": -73.07773
+  },
+  "CR": {
+    "iso3": "CRI",
+    "name": "Costa Rica",
+    "names": [
+      "CR",
+      "Costa Rica",
+      "Republic of Costa Rica",
+      "República da Costa Rica",
+      "República de Costa Rica"
+    ],
+    "lat": 9.96567,
+    "lon": -84.17542
+  },
+  "CU": {
+    "iso3": "CUB",
+    "name": "Cuba",
+    "names": [
+      "CU",
+      "Cuba",
+      "Republic of Cuba",
+      "República de Cuba"
+    ],
+    "lat": 21.63175,
+    "lon": -78.96068
+  },
+  "CV": {
+    "iso3": "CPV",
+    "name": "Cape Verde",
+    "names": [
+      "CV",
+      "Cabo Verde",
+      "Cape Verde",
+      "Republic of Cabo Verde",
+      "República de Cabo Verde"
+    ],
+    "lat": 16,
+    "lon": -24
+  },
+  "CW": {
+    "iso3": "CUW",
+    "name": "Curaçao",
+    "names": [
+      "CW",
+      "Country of Curaçao",
+      "Curacao",
+      "Curazao",
+      "Curaçao",
+      "Kòrsou",
+      "Land Curaçao",
+      "Pais Kòrsou",
+      "País de Curazao",
+      "País de Curaçao",
+      "ilha da Curação"
+    ],
+    "lat": 12.116667,
+    "lon": -68.933333
+  },
+  "CX": {
+    "iso3": "CXR",
+    "name": "Christmas Island",
+    "names": [
+      "CX",
+      "Christmas Island",
+      "Ilha do Natal",
+      "Isla de Navidad",
+      "Territorio de la Isla de Navidad",
+      "Territory of Christmas Island",
+      "Território da Ilha Christmas"
+    ],
+    "lat": -10.5,
+    "lon": 105.66666666
+  },
+  "CY": {
+    "iso3": "CYP",
+    "name": "Cyprus",
+    "names": [
+      "CY",
+      "Chipre",
+      "Cyprus",
+      "Kýpros",
+      "Kıbrıs",
+      "Kıbrıs Cumhuriyeti",
+      "Republic of Cyprus",
+      "República de Chipre",
+      "Κυπριακή Δημοκρατία"
+    ],
+    "lat": 34.90706,
+    "lon": 33.03955
+  },
+  "CZ": {
+    "iso3": "CZE",
+    "name": "Czechia",
+    "names": [
+      "CZ",
+      "Chequia",
+      "Chéquia",
+      "Czech Republic",
+      "Czechia",
+      "República Checa",
+      "Česko",
+      "Česká republika"
+    ],
+    "lat": 49.77525,
+    "lon": 15.33456
+  },
+  "DE": {
+    "iso3": "DEU",
+    "name": "Germany",
+    "names": [
+      "Alemanha",
+      "Alemania",
+      "Bundesrepublik Deutschland",
+      "DE",
+      "Federal Republic of Germany",
+      "Germany",
+      "República Federal da Alemanha",
+      "República Federal de Alemania"
+    ],
+    "lat": 51.13372,
+    "lon": 10.28849
+  },
+  "DJ": {
+    "iso3": "DJI",
+    "name": "Djibouti",
+    "names": [
+      "DJ",
+      "Djibouti",
+      "Gabuuti",
+      "Gabuutih Ummuuno",
+      "Jabuuti",
+      "Jamhuuriyadda Jabuuti",
+      "Republic of Djibouti",
+      "República de Djibouti",
+      "República do Djibouti",
+      "République de Djibouti"
+    ],
+    "lat": 11.77304,
+    "lon": 42.49802
+  },
+  "DK": {
+    "iso3": "DNK",
+    "name": "Denmark",
+    "names": [
+      "DK",
+      "Danmark",
+      "Denmark",
+      "Dinamarca",
+      "Kingdom of Denmark",
+      "Kongeriget Danmark",
+      "Reino da Dinamarca",
+      "Reino de Dinamarca"
+    ],
+    "lat": 56.06393,
+    "lon": 9.87637
+  },
+  "DM": {
+    "iso3": "DMA",
+    "name": "Dominica",
+    "names": [
+      "Commonwealth of Dominica",
+      "Comunidade da Dominica",
+      "DM",
+      "Dominica",
+      "Dominique",
+      "Mancomunidad de Dominica",
+      "Wai‘tu kubuli"
+    ],
+    "lat": 15.41666666,
+    "lon": -61.33333333
+  },
+  "DO": {
+    "iso3": "DOM",
+    "name": "Dominican Republic",
+    "names": [
+      "DO",
+      "Dominican Republic",
+      "República Dominicana"
+    ],
+    "lat": 18.88449,
+    "lon": -70.46236
+  },
+  "DZ": {
+    "iso3": "DZA",
+    "name": "Algeria",
+    "names": [
+      "Algeria",
+      "Algérie",
+      "Argelia",
+      "Argélia",
+      "DZ",
+      "Dzayer",
+      "People's Democratic Republic of Algeria",
+      "República Argelina Democrática e Popular",
+      "República Argelina Democrática y Popular"
+    ],
+    "lat": 28.18548,
+    "lon": 2.59805
+  },
+  "EC": {
+    "iso3": "ECU",
+    "name": "Ecuador",
+    "names": [
+      "EC",
+      "Ecuador",
+      "Equador",
+      "Republic of Ecuador",
+      "República del Ecuador",
+      "República do Equador"
+    ],
+    "lat": -1.45477,
+    "lon": -78.38417
+  },
+  "EE": {
+    "iso3": "EST",
+    "name": "Estonia",
+    "names": [
+      "EE",
+      "Eesti",
+      "Eesti Vabariik",
+      "Estonia",
+      "Estónia",
+      "Republic of Estonia",
+      "República da Estónia",
+      "República de Estonia"
+    ],
+    "lat": 58.6437,
+    "lon": 25.82473
+  },
+  "EG": {
+    "iso3": "EGY",
+    "name": "Egypt",
+    "names": [
+      "Arab Republic of Egypt",
+      "EG",
+      "Egipto",
+      "Egito",
+      "Egypt",
+      "República Árabe de Egipto",
+      "República Árabe do Egipto"
+    ],
+    "lat": 26.50662,
+    "lon": 29.84446
+  },
+  "EH": {
+    "iso3": "ESH",
+    "name": "Western Sahara",
+    "names": [
+      "EH",
+      "República Árabe Saharaui Democrática",
+      "Saara Ocidental",
+      "Sahara Occidental",
+      "Sahrawi Arab Democratic Republic",
+      "Taneẓroft Tutrimt",
+      "Western Sahara"
+    ],
+    "lat": 24.29117,
+    "lon": -12.13783
+  },
+  "ER": {
+    "iso3": "ERI",
+    "name": "Eritrea",
+    "names": [
+      "Dawlat Iritriyá",
+      "ER",
+      "Eritrea",
+      "Eritreia",
+      "Estado da Eritreia",
+      "Estado de Eritrea",
+      "Iritriyā",
+      "State of Eritrea",
+      "ʾErtrā",
+      "ሃገረ ኤርትራ"
+    ],
+    "lat": 15.42728,
+    "lon": 38.67819
+  },
+  "ES": {
+    "iso3": "ESP",
+    "name": "Spain",
+    "names": [
+      "ES",
+      "Espanha",
+      "España",
+      "Kingdom of Spain",
+      "Reino de Espanha",
+      "Reino de España",
+      "Spain"
+    ],
+    "lat": 40.34866,
+    "lon": -3.61702
+  },
+  "ET": {
+    "iso3": "ETH",
+    "name": "Ethiopia",
+    "names": [
+      "ET",
+      "Ethiopia",
+      "Etiopía",
+      "Etiópia",
+      "Federal Democratic Republic of Ethiopia",
+      "República Democrática Federal de Etiopía",
+      "República Federal Democrática da Etiópia",
+      "ʾĪtyōṗṗyā",
+      "የኢትዮጵያ ፌዴራላዊ ዲሞክራሲያዊ ሪፐብሊክ"
+    ],
+    "lat": 8.654,
+    "lon": 39.55126
+  },
+  "FI": {
+    "iso3": "FIN",
+    "name": "Finland",
+    "names": [
+      "FI",
+      "Finland",
+      "Finlandia",
+      "Finlândia",
+      "Republic of Finland",
+      "Republiken Finland",
+      "República da Finlândia",
+      "República de Finlandia",
+      "Suomen tasavalta",
+      "Suomi"
+    ],
+    "lat": 64.50409,
+    "lon": 26.21176
+  },
+  "FJ": {
+    "iso3": "FJI",
+    "name": "Fiji",
+    "names": [
+      "FJ",
+      "Fiji",
+      "Fijī Gaṇarājya",
+      "Fiyi",
+      "Matanitu ko Viti",
+      "Republic of Fiji",
+      "República de Fiji",
+      "Viti"
+    ],
+    "lat": -17.31631,
+    "lon": 178.56332
+  },
+  "FK": {
+    "iso3": "FLK",
+    "name": "Falkland Islands",
+    "names": [
+      "FK",
+      "Falkland Islands",
+      "Falkland Islands (Malvinas)",
+      "Ilhas Malvinas",
+      "Islas Malvinas",
+      "islas Malvinas"
+    ],
+    "lat": -51.71322,
+    "lon": -59.42097
+  },
+  "FM": {
+    "iso3": "FSM",
+    "name": "Micronesia",
+    "names": [
+      "Estados Federados da Micronésia",
+      "Estados Federados de Micronesia",
+      "FM",
+      "Federated States of Micronesia",
+      "Micronesia",
+      "Micronesia, Federated States of",
+      "Micronésia"
+    ],
+    "lat": 6.91666666,
+    "lon": 158.25
+  },
+  "FO": {
+    "iso3": "FRO",
+    "name": "Faroe Islands",
+    "names": [
+      "FO",
+      "Faeroe Islands",
+      "Faroe Islands",
+      "Færøerne",
+      "Føroyar",
+      "Ilhas Faroe",
+      "Ilhas Faroé",
+      "Islas Faroe",
+      "Islas Feroe"
+    ],
+    "lat": 62,
+    "lon": -7
+  },
+  "FR": {
+    "iso3": "FRA",
+    "name": "France",
+    "names": [
+      "FR",
+      "France",
+      "Francia",
+      "França",
+      "French Republic",
+      "República Francesa",
+      "República francés",
+      "République française"
+    ],
+    "lat": 42.4607,
+    "lon": -2.8767
+  },
+  "GA": {
+    "iso3": "GAB",
+    "name": "Gabon",
+    "names": [
+      "GA",
+      "Gabon",
+      "Gabonese Republic",
+      "Gabão",
+      "Gabón",
+      "República de Gabón",
+      "República do Gabão",
+      "République Gabonaise"
+    ],
+    "lat": -0.64705,
+    "lon": 11.68775
+  },
+  "GB": {
+    "iso3": "GBR",
+    "name": "United Kingdom",
+    "names": [
+      "GB",
+      "Great Britain",
+      "Reino Unido",
+      "Reino Unido da Grã-Bretanha e Irlanda do Norte",
+      "Reino Unido de Gran Bretaña e Irlanda del Norte",
+      "UK",
+      "United Kingdom",
+      "United Kingdom of Great Britain and Northern Ireland"
+    ],
+    "lat": 53.91477,
+    "lon": -2.85314
+  },
+  "GD": {
+    "iso3": "GRD",
+    "name": "Grenada",
+    "names": [
+      "GD",
+      "Granada",
+      "Grenada"
+    ],
+    "lat": 12.11666666,
+    "lon": -61.66666666
+  },
+  "GE": {
+    "iso3": "GEO",
+    "name": "Georgia",
+    "names": [
+      "GE",
+      "Georgia",
+      "Geórgia",
+      "Sakartvelo"
+    ],
+    "lat": 42.16202,
+    "lon": 43.48154
+  },
+  "GF": {
+    "iso3": "GUF",
+    "name": "French Guiana",
+    "names": [
+      "French Guiana",
+      "GF",
+      "Guayana",
+      "Guayana Francesa",
+      "Guiana",
+      "Guiana Francesa",
+      "Guyane"
+    ],
+    "lat": 4,
+    "lon": -53
+  },
+  "GG": {
+    "iso3": "GGY",
+    "name": "Guernsey",
+    "names": [
+      "Bailiado de Guernsey",
+      "Bailiwick of Guernsey",
+      "Bailliage de Guernesey",
+      "Bailía de Guernsey",
+      "GG",
+      "Guernsey"
+    ],
+    "lat": 49.46666666,
+    "lon": -2.58333333
+  },
+  "GH": {
+    "iso3": "GHA",
+    "name": "Ghana",
+    "names": [
+      "GH",
+      "Gana",
+      "Ghana",
+      "Republic of Ghana",
+      "República de Ghana",
+      "República do Gana"
+    ],
+    "lat": 7.92865,
+    "lon": -1.23697
+  },
+  "GI": {
+    "iso3": "GIB",
+    "name": "Gibraltar",
+    "names": [
+      "GI",
+      "Gibraltar"
+    ],
+    "lat": 36.13333333,
+    "lon": -5.35
+  },
+  "GL": {
+    "iso3": "GRL",
+    "name": "Greenland",
+    "names": [
+      "GL",
+      "Greenland",
+      "Groenlandia",
+      "Groenlândia",
+      "Gronelândia",
+      "Grønland"
+    ],
+    "lat": 74.77049,
+    "lon": -41.50018
+  },
+  "GM": {
+    "iso3": "GMB",
+    "name": "Gambia",
+    "names": [
+      "GM",
+      "Gambia",
+      "Gâmbia",
+      "Republic of the Gambia",
+      "República da Gâmbia",
+      "República de Gambia"
+    ],
+    "lat": 13.47533,
+    "lon": -15.43187
+  },
+  "GN": {
+    "iso3": "GIN",
+    "name": "Guinea",
+    "names": [
+      "GN",
+      "Guinea",
+      "Guiné",
+      "Republic of Guinea",
+      "República da Guiné",
+      "República de Guinea",
+      "République de Guinée"
+    ],
+    "lat": 10.44827,
+    "lon": -11.06085
+  },
+  "GP": {
+    "iso3": "GLP",
+    "name": "Guadeloupe",
+    "names": [
+      "GP",
+      "Guadalupe",
+      "Guadeloupe",
+      "Gwadloup"
+    ],
+    "lat": 16.25,
+    "lon": -61.583333
+  },
+  "GQ": {
+    "iso3": "GNQ",
+    "name": "Equatorial Guinea",
+    "names": [
+      "Equatorial Guinea",
+      "GQ",
+      "Guinea Ecuatorial",
+      "Guiné Equatorial",
+      "Republic of Equatorial Guinea",
+      "República da Guiné Equatorial",
+      "República de Guinea Ecuatorial",
+      "République de Guinée équatoriale"
+    ],
+    "lat": 1.64586,
+    "lon": 10.36603
+  },
+  "GR": {
+    "iso3": "GRC",
+    "name": "Greece",
+    "names": [
+      "Elláda",
+      "GR",
+      "Grecia",
+      "Greece",
+      "Grécia",
+      "Hellenic Republic",
+      "República Helénica",
+      "Ελληνική Δημοκρατία"
+    ],
+    "lat": 39.06672,
+    "lon": 22.71981
+  },
+  "GS": {
+    "iso3": "SGS",
+    "name": "South Georgia",
+    "names": [
+      "GS",
+      "Georgia del Sur y las Islas Sandwich del Sur",
+      "Geórgia do Sul e Sandwich do Sul",
+      "Ilhas Geórgia do Sul e Sandwich do Sul",
+      "Islas Georgias del Sur y Sandwich del Sur",
+      "South Georgia",
+      "South Georgia and the South Sandwich Islands"
+    ],
+    "lat": -54.5,
+    "lon": -37
+  },
+  "GT": {
+    "iso3": "GTM",
+    "name": "Guatemala",
+    "names": [
+      "GT",
+      "Guatemala",
+      "Republic of Guatemala",
+      "República da Guatemala",
+      "República de Guatemala"
+    ],
+    "lat": 15.69936,
+    "lon": -90.36946
+  },
+  "GU": {
+    "iso3": "GUM",
+    "name": "Guam",
+    "names": [
+      "GU",
+      "Guam",
+      "Guåhån"
+    ],
+    "lat": 13.46666666,
+    "lon": 144.78333333
+  },
+  "GW": {
+    "iso3": "GNB",
+    "name": "Guinea-Bissau",
+    "names": [
+      "GW",
+      "Guinea-Bissau",
+      "Guinea-Bisáu",
+      "Guiné-Bissau",
+      "Republic of Guinea-Bissau",
+      "República da Guiné-Bissau",
+      "República de Guinea-Bissau"
+    ],
+    "lat": 12.0227,
+    "lon": -15.11062
+  },
+  "GY": {
+    "iso3": "GUY",
+    "name": "Guyana",
+    "names": [
+      "Co -operative República da Guiana",
+      "Co-operative Republic of Guyana",
+      "GY",
+      "Guiana",
+      "Guyana",
+      "República Cooperativa de Guyana"
+    ],
+    "lat": 4.79023,
+    "lon": -58.9712
+  },
+  "HK": {
+    "iso3": "HKG",
+    "name": "Hong Kong",
+    "names": [
+      "HK",
+      "Hong Kong",
+      "Hong Kong Região Administrativa Especial da República Popular da China",
+      "Hong Kong Región Administrativa Especial de la República Popular China",
+      "Hong Kong Special Administrative Region of the People's Republic of China"
+    ],
+    "lat": 22.267,
+    "lon": 114.188
+  },
+  "HM": {
+    "iso3": "HMD",
+    "name": "Heard Island and McDonald Islands",
+    "names": [
+      "HM",
+      "Heard Island and McDonald Islands",
+      "Ilha Heard e Ilhas McDonald",
+      "Islas Heard y McDonald"
+    ],
+    "lat": -53.1,
+    "lon": 72.51666666
+  },
+  "HN": {
+    "iso3": "HND",
+    "name": "Honduras",
+    "names": [
+      "HN",
+      "Honduras",
+      "Republic of Honduras",
+      "República de Honduras"
+    ],
+    "lat": 14.82295,
+    "lon": -86.58996
+  },
+  "HR": {
+    "iso3": "HRV",
+    "name": "Croatia",
+    "names": [
+      "Croacia",
+      "Croatia",
+      "Croácia",
+      "HR",
+      "Hrvatska",
+      "Republic of Croatia",
+      "Republika Hrvatska",
+      "República da Croácia",
+      "República de Croacia"
+    ],
+    "lat": 45.01623,
+    "lon": 16.56619
+  },
+  "HT": {
+    "iso3": "HTI",
+    "name": "Haiti",
+    "names": [
+      "HT",
+      "Haiti",
+      "Haití",
+      "Repiblik Ayiti",
+      "Republic of Haiti",
+      "República de Haití",
+      "República do Haiti",
+      "République d'Haïti"
+    ],
+    "lat": 18.9007,
+    "lon": -72.65801
+  },
+  "HU": {
+    "iso3": "HUN",
+    "name": "Hungary",
+    "names": [
+      "HU",
+      "Hungary",
+      "Hungria",
+      "Hungría"
+    ],
+    "lat": 47.19995,
+    "lon": 19.35763
+  },
+  "ID": {
+    "iso3": "IDN",
+    "name": "Indonesia",
+    "names": [
+      "ID",
+      "Indonesia",
+      "Indonésia",
+      "Republic of Indonesia",
+      "Republik Indonesia",
+      "República da Indonésia",
+      "República de Indonesia"
+    ],
+    "lat": -2.22174,
+    "lon": 117.42341
+  },
+  "IE": {
+    "iso3": "IRL",
+    "name": "Ireland",
+    "names": [
+      "IE",
+      "Ireland",
+      "Irlanda",
+      "Poblacht na hÉireann",
+      "Republic of Ireland",
+      "República da Irlanda",
+      "República de Irlanda",
+      "Éire"
+    ],
+    "lat": 53.18059,
+    "lon": -8.01024
+  },
+  "IL": {
+    "iso3": "ISR",
+    "name": "Israel",
+    "names": [
+      "Estado de Israel",
+      "IL",
+      "Israel",
+      "Medīnat Yisrā'el",
+      "State of Israel"
+    ],
+    "lat": 31.48492,
+    "lon": 35.00385
+  },
+  "IM": {
+    "iso3": "IMN",
+    "name": "Isle of Man",
+    "names": [
+      "Ellan Vannin",
+      "IM",
+      "Ilha de Man",
+      "Isla de Man",
+      "Isle of Man",
+      "Mann",
+      "Mannin"
+    ],
+    "lat": 54.25,
+    "lon": -4.5
+  },
+  "IN": {
+    "iso3": "IND",
+    "name": "India",
+    "names": [
+      "Bharat Ganrajya",
+      "Bhārat",
+      "IN",
+      "India",
+      "Republic of India",
+      "República da Índia",
+      "República de la India",
+      "Índia",
+      "இந்தியா"
+    ],
+    "lat": 22.92501,
+    "lon": 79.5937
+  },
+  "IO": {
+    "iso3": "IOT",
+    "name": "British Indian Ocean Territory",
+    "names": [
+      "British Indian Ocean Territory",
+      "IO",
+      "Territorio Británico del Océano Índico",
+      "Território Britânico do Oceano Índico"
+    ],
+    "lat": -6,
+    "lon": 71.5
+  },
+  "IQ": {
+    "iso3": "IRQ",
+    "name": "Iraq",
+    "names": [
+      "IQ",
+      "Irak",
+      "Iraq",
+      "Iraque",
+      "Jumhūriyyat al-‘Irāq",
+      "Republic of Iraq",
+      "República de Irak",
+      "República do Iraque"
+    ],
+    "lat": 33.03682,
+    "lon": 43.75691
+  },
+  "IR": {
+    "iso3": "IRN",
+    "name": "Iran",
+    "names": [
+      "IR",
+      "Iran",
+      "Iran, Islamic Republic of",
+      "Irão",
+      "Islamic Republic of Iran",
+      "Jomhuri-ye Eslāmi-ye Irān",
+      "República Islámica de Irán",
+      "República Islâmica do Irã"
+    ],
+    "lat": 32.51892,
+    "lon": 54.28545
+  },
+  "IS": {
+    "iso3": "ISL",
+    "name": "Iceland",
+    "names": [
+      "IS",
+      "Iceland",
+      "Island",
+      "Islandia",
+      "Islândia",
+      "Lýðveldið Ísland",
+      "Republic of Iceland"
+    ],
+    "lat": 65.07428,
+    "lon": -18.76103
+  },
+  "IT": {
+    "iso3": "ITA",
+    "name": "Italy",
+    "names": [
+      "IT",
+      "Italia",
+      "Italian Republic",
+      "Italy",
+      "Itália",
+      "Repubblica italiana",
+      "República Italiana"
+    ],
+    "lat": 42.75118,
+    "lon": 12.14079
+  },
+  "JE": {
+    "iso3": "JEY",
+    "name": "Jersey",
+    "names": [
+      "Bailiado de Jersey",
+      "Bailiwick of Jersey",
+      "Bailliage de Jersey",
+      "Bailliage dé Jèrri",
+      "Bailía de Jersey",
+      "JE",
+      "Jersey"
+    ],
+    "lat": 49.25,
+    "lon": -2.16666666
+  },
+  "JM": {
+    "iso3": "JAM",
+    "name": "Jamaica",
+    "names": [
+      "JM",
+      "Jamaica"
+    ],
+    "lat": 18.13764,
+    "lon": -77.32425
+  },
+  "JO": {
+    "iso3": "JOR",
+    "name": "Jordan",
+    "names": [
+      "Hashemite Kingdom of Jordan",
+      "JO",
+      "Jordan",
+      "Jordania",
+      "Jordânia",
+      "Reino Hachemita da Jordânia",
+      "Reino Hachemita de Jordania",
+      "al-Mamlakah al-Urdunīyah al-Hāshimīyah"
+    ],
+    "lat": 31.24549,
+    "lon": 36.77945
+  },
+  "JP": {
+    "iso3": "JPN",
+    "name": "Japan",
+    "names": [
+      "JP",
+      "Japan",
+      "Japão",
+      "Japón",
+      "Nihon",
+      "Nippon"
+    ],
+    "lat": 37.66311,
+    "lon": 138.06496
+  },
+  "KE": {
+    "iso3": "KEN",
+    "name": "Kenya",
+    "names": [
+      "Jamhuri ya Kenya",
+      "KE",
+      "Kenia",
+      "Kenya",
+      "Quénia",
+      "Republic of Kenya",
+      "República de Kenya",
+      "República do Quénia"
+    ],
+    "lat": 0.59597,
+    "lon": 37.79156
+  },
+  "KG": {
+    "iso3": "KGZ",
+    "name": "Kyrgyzstan",
+    "names": [
+      "KG",
+      "Kirguizistán",
+      "Kyrgyz Republic",
+      "Kyrgyz Respublikasy",
+      "Kyrgyzstan",
+      "Quirguistão",
+      "República Kirguisa",
+      "República do Quirguistão",
+      "Киргизия",
+      "Кыргыз Республикасы"
+    ],
+    "lat": 41.50689,
+    "lon": 74.6204
+  },
+  "KH": {
+    "iso3": "KHM",
+    "name": "Cambodia",
+    "names": [
+      "Cambodia",
+      "Camboja",
+      "Camboya",
+      "KH",
+      "Kingdom of Cambodia",
+      "Reino de Camboya",
+      "Reino do Camboja"
+    ],
+    "lat": 12.68473,
+    "lon": 104.87609
+  },
+  "KI": {
+    "iso3": "KIR",
+    "name": "Kiribati",
+    "names": [
+      "Independent and Sovereign Republic of Kiribati",
+      "Independente e soberano República de Kiribati",
+      "KI",
+      "Kiribati",
+      "Republic of Kiribati",
+      "República Independiente y Soberano de Kiribati",
+      "Ribaberiki Kiribati"
+    ],
+    "lat": 1.41666666,
+    "lon": 173
+  },
+  "KM": {
+    "iso3": "COM",
+    "name": "Comoros",
+    "names": [
+      "Comoras",
+      "Comores",
+      "Comoros",
+      "KM",
+      "Udzima wa Komori",
+      "Union des Comores",
+      "Union of the Comoros",
+      "União das Comores",
+      "Unión de las Comoras",
+      "al-Ittiḥād al-Qumurī"
+    ],
+    "lat": -12.16666666,
+    "lon": 44.25
+  },
+  "KN": {
+    "iso3": "KNA",
+    "name": "Saint Kitts and Nevis",
+    "names": [
+      "Federación de San Cristóbal y Nevis",
+      "Federation of Saint Christopher and Nevis",
+      "Federação de São Cristóvão e Nevis",
+      "KN",
+      "Saint Kitts and Nevis",
+      "San Cristóbal y Nieves",
+      "São Cristóvão e Nevis"
+    ],
+    "lat": 17.33333333,
+    "lon": -62.75
+  },
+  "KP": {
+    "iso3": "PRK",
+    "name": "North Korea",
+    "names": [
+      "Chosŏn Minjujuŭi Inmin Konghwaguk",
+      "Corea del Norte",
+      "Coreia do Norte",
+      "DPRK",
+      "Democratic People's Republic of Korea",
+      "KP",
+      "Korea, Democratic People's Republic of",
+      "North Korea",
+      "República Popular Democrática da Coreia",
+      "República Popular Democrática de Corea",
+      "북조선",
+      "북한",
+      "조선민주주의인민공화국"
+    ],
+    "lat": 40.14302,
+    "lon": 127.16502
+  },
+  "KR": {
+    "iso3": "KOR",
+    "name": "South Korea",
+    "names": [
+      "Corea del Sur",
+      "Coreia do Sul",
+      "KR",
+      "Korea, Republic of",
+      "Republic of Korea",
+      "República da Coreia",
+      "República de Corea",
+      "South Korea",
+      "남조선",
+      "남한"
+    ],
+    "lat": 36.4276,
+    "lon": 127.82132
+  },
+  "KW": {
+    "iso3": "KWT",
+    "name": "Kuwait",
+    "names": [
+      "Dawlat al-Kuwait",
+      "Estado de Kuwait",
+      "Estado do Kuwait",
+      "KW",
+      "Kuwait",
+      "State of Kuwait"
+    ],
+    "lat": 29.30727,
+    "lon": 47.6001
+  },
+  "KY": {
+    "iso3": "CYM",
+    "name": "Cayman Islands",
+    "names": [
+      "Cayman Islands",
+      "Ilhas Caimão",
+      "Ilhas Cayman",
+      "Islas Caimán",
+      "KY"
+    ],
+    "lat": 19.5,
+    "lon": -80.5
+  },
+  "KZ": {
+    "iso3": "KAZ",
+    "name": "Kazakhstan",
+    "names": [
+      "Cazaquistão",
+      "KZ",
+      "Kazajistán",
+      "Kazakhstan",
+      "Qazaqstan",
+      "Qazaqstan Respublïkası",
+      "Republic of Kazakhstan",
+      "República de Kazajstán",
+      "República do Cazaquistão",
+      "Respublika Kazakhstan",
+      "Казахстан",
+      "Республика Казахстан",
+      "Қазақстан Республикасы"
+    ],
+    "lat": 48.19166,
+    "lon": 67.28461
+  },
+  "LA": {
+    "iso3": "LAO",
+    "name": "Laos",
+    "names": [
+      "LA",
+      "Lao",
+      "Lao People's Democratic Republic",
+      "Laos",
+      "Laos, República Democrática",
+      "República Democrática Popular Lao",
+      "Sathalanalat Paxathipatai Paxaxon Lao"
+    ],
+    "lat": 18.44498,
+    "lon": 103.75026
+  },
+  "LB": {
+    "iso3": "LBN",
+    "name": "Lebanon",
+    "names": [
+      "Al-Jumhūrīyah Al-Libnānīyah",
+      "LB",
+      "Lebanese Republic",
+      "Lebanon",
+      "Líbano",
+      "República Libanesa"
+    ],
+    "lat": 33.91183,
+    "lon": 35.87099
+  },
+  "LC": {
+    "iso3": "LCA",
+    "name": "Saint Lucia",
+    "names": [
+      "LC",
+      "Saint Lucia",
+      "Santa Lucía",
+      "Santa Lúcia"
+    ],
+    "lat": 13.88333333,
+    "lon": -60.96666666
+  },
+  "LI": {
+    "iso3": "LIE",
+    "name": "Liechtenstein",
+    "names": [
+      "Fürstentum Liechtenstein",
+      "LI",
+      "Liechtenstein",
+      "Principado de Liechtenstein",
+      "Principality of Liechtenstein"
+    ],
+    "lat": 47.26666666,
+    "lon": 9.53333333
+  },
+  "LK": {
+    "iso3": "LKA",
+    "name": "Sri Lanka",
+    "names": [
+      "Democratic Socialist Republic of Sri Lanka",
+      "LK",
+      "República Democrática Socialista de Sri Lanka",
+      "República Democrática Socialista do Sri Lanka",
+      "Sri Lanka",
+      "ilaṅkai"
+    ],
+    "lat": 7.70053,
+    "lon": 80.66724
+  },
+  "LR": {
+    "iso3": "LBR",
+    "name": "Liberia",
+    "names": [
+      "LR",
+      "Liberia",
+      "Libéria",
+      "Republic of Liberia",
+      "República da Libéria",
+      "República de Liberia"
+    ],
+    "lat": 6.43162,
+    "lon": -9.41084
+  },
+  "LS": {
+    "iso3": "LSO",
+    "name": "Lesotho",
+    "names": [
+      "Kingdom of Lesotho",
+      "LS",
+      "Lesotho",
+      "Lesoto",
+      "Muso oa Lesotho",
+      "Reino de Lesotho",
+      "Reino do Lesoto"
+    ],
+    "lat": -29.62529,
+    "lon": 28.17011
+  },
+  "LT": {
+    "iso3": "LTU",
+    "name": "Lithuania",
+    "names": [
+      "LT",
+      "Lietuvos Respublika",
+      "Lithuania",
+      "Lituania",
+      "Lituânia",
+      "Republic of Lithuania",
+      "República da Lituânia",
+      "República de Lituania"
+    ],
+    "lat": 55.28432,
+    "lon": 23.88064
+  },
+  "LU": {
+    "iso3": "LUX",
+    "name": "Luxembourg",
+    "names": [
+      "Gran Ducado de Luxemburgo",
+      "Grand Duchy of Luxembourg",
+      "Grand-Duché de Luxembourg",
+      "Groussherzogtum Lëtzebuerg",
+      "Großherzogtum Luxemburg",
+      "Grão-Ducado do Luxemburgo",
+      "LU",
+      "Luxembourg",
+      "Luxemburgo"
+    ],
+    "lat": 49.76571,
+    "lon": 5.96522
+  },
+  "LV": {
+    "iso3": "LVA",
+    "name": "Latvia",
+    "names": [
+      "LV",
+      "Latvia",
+      "Latvijas Republika",
+      "Letonia",
+      "Letónia",
+      "Republic of Latvia",
+      "República da Letónia",
+      "República de Letonia"
+    ],
+    "lat": 56.80718,
+    "lon": 24.8333
+  },
+  "LY": {
+    "iso3": "LBY",
+    "name": "Libya",
+    "names": [
+      "Dawlat Libya",
+      "Estado da Líbia",
+      "Estado de Libia",
+      "LY",
+      "Libia",
+      "Libya",
+      "Líbia",
+      "State of Libya"
+    ],
+    "lat": 26.99746,
+    "lon": 17.97435
+  },
+  "MA": {
+    "iso3": "MAR",
+    "name": "Morocco",
+    "names": [
+      "Al-Mamlakah al-Maġribiyah",
+      "Kingdom of Morocco",
+      "MA",
+      "Marrocos",
+      "Marruecos",
+      "Morocco",
+      "Reino de Marrocos",
+      "Reino de Marruecos"
+    ],
+    "lat": 29.88539,
+    "lon": -8.42048
+  },
+  "MC": {
+    "iso3": "MCO",
+    "name": "Monaco",
+    "names": [
+      "MC",
+      "Monaco",
+      "Mónaco",
+      "Principado de Mónaco",
+      "Principado do Mónaco",
+      "Principality of Monaco",
+      "Principauté de Monaco"
+    ],
+    "lat": 43.73333333,
+    "lon": 7.4
+  },
+  "MD": {
+    "iso3": "MDA",
+    "name": "Moldova",
+    "names": [
+      "MD",
+      "Moldavia",
+      "Moldova",
+      "Moldova, Republic of",
+      "Moldávia",
+      "Republic of Moldova",
+      "Republica Moldova",
+      "República da Moldávia",
+      "República de Moldova"
+    ],
+    "lat": 47.20368,
+    "lon": 28.41048
+  },
+  "ME": {
+    "iso3": "MNE",
+    "name": "Montenegro",
+    "names": [
+      "Crna Gora",
+      "ME",
+      "Montenegro"
+    ],
+    "lat": 42.78904,
+    "lon": 19.28618
+  },
+  "MF": {
+    "iso3": "MAF",
+    "name": "Saint Martin",
+    "names": [
+      "Collectivity of Saint Martin",
+      "Collectivité de Saint-Martin",
+      "MF",
+      "Saint Martin",
+      "Saint Martin (French part)",
+      "São Martinho",
+      "saint Martin"
+    ],
+    "lat": 18.08333333,
+    "lon": -63.95
+  },
+  "MG": {
+    "iso3": "MDG",
+    "name": "Madagascar",
+    "names": [
+      "MG",
+      "Madagascar",
+      "Madagáscar",
+      "Repoblikan'i Madagasikara",
+      "Republic of Madagascar",
+      "República de Madagascar",
+      "República de Madagáscar",
+      "République de Madagascar"
+    ],
+    "lat": -19.35611,
+    "lon": 46.69117
+  },
+  "MH": {
+    "iso3": "MHL",
+    "name": "Marshall Islands",
+    "names": [
+      "Aolepān Aorōkin M̧ajeļ",
+      "Ilhas Marshall",
+      "Islas Marshall",
+      "MH",
+      "Marshall Islands",
+      "Republic of the Marshall Islands",
+      "República das Ilhas Marshall",
+      "República de las Islas Marshall"
+    ],
+    "lat": 9,
+    "lon": 168
+  },
+  "MK": {
+    "iso3": "MKD",
+    "name": "North Macedonia",
+    "names": [
+      "MK",
+      "Macedonia",
+      "Macedonia del Norte",
+      "Macedonia, The Former Yugoslav Republic of",
+      "Macedónia do Norte",
+      "North Macedonia",
+      "Republic of North Macedonia",
+      "República da Macedônia do Norte",
+      "República de Macedonia del Norte",
+      "The former Yugoslav Republic of Macedonia",
+      "Република Северна Македонија"
+    ],
+    "lat": 41.60593,
+    "lon": 21.6979
+  },
+  "ML": {
+    "iso3": "MLI",
+    "name": "Mali",
+    "names": [
+      "ML",
+      "Mali",
+      "Republic of Mali",
+      "República de Malí",
+      "República do Mali",
+      "République du Mali"
+    ],
+    "lat": 17.26777,
+    "lon": -3.54329
+  },
+  "MM": {
+    "iso3": "MMR",
+    "name": "Myanmar",
+    "names": [
+      "Burma",
+      "MM",
+      "Myanmar",
+      "Pyidaunzu Thanmăda Myăma Nainngandaw",
+      "Republic of the Union of Myanmar",
+      "República da União de Myanmar",
+      "República de la Unión de Myanmar"
+    ],
+    "lat": 21.017,
+    "lon": 96.50584
+  },
+  "MN": {
+    "iso3": "MNG",
+    "name": "Mongolia",
+    "names": [
+      "MN",
+      "Mongolia",
+      "Mongólia"
+    ],
+    "lat": 46.82368,
+    "lon": 102.94641
+  },
+  "MO": {
+    "iso3": "MAC",
+    "name": "Macau",
+    "names": [
+      "MO",
+      "Macao",
+      "Macao Special Administrative Region of the People's Republic of China",
+      "Macao, Región Administrativa Especial de la República Popular China",
+      "Macau",
+      "Macau Região Administrativa Especial da República Popular da China",
+      "Região Administrativa Especial de Macau da República Popular da China",
+      "中華人民共和國澳門特別行政區",
+      "澳门"
+    ],
+    "lat": 22.16666666,
+    "lon": 113.55
+  },
+  "MP": {
+    "iso3": "MNP",
+    "name": "Northern Mariana Islands",
+    "names": [
+      "Commonwealth of the Northern Mariana Islands",
+      "Comunidade das Ilhas Marianas do Norte",
+      "Islas Marianas del Norte",
+      "MP",
+      "Mancomunidad de las Islas Marianas del Norte",
+      "Marianas Setentrionais",
+      "Northern Mariana Islands",
+      "Sankattan Siha Na Islas Mariånas"
+    ],
+    "lat": 15.2,
+    "lon": 145.75
+  },
+  "MQ": {
+    "iso3": "MTQ",
+    "name": "Martinique",
+    "names": [
+      "MQ",
+      "Martinica",
+      "Martinique"
+    ],
+    "lat": 14.666667,
+    "lon": -61
+  },
+  "MR": {
+    "iso3": "MRT",
+    "name": "Mauritania",
+    "names": [
+      "Islamic Republic of Mauritania",
+      "MR",
+      "Mauritania",
+      "Mauritânia",
+      "República Islámica de Mauritania",
+      "República Islâmica da Mauritânia",
+      "al-Jumhūriyyah al-ʾIslāmiyyah al-Mūrītāniyyah"
+    ],
+    "lat": 20.20927,
+    "lon": -10.3264
+  },
+  "MS": {
+    "iso3": "MSR",
+    "name": "Montserrat",
+    "names": [
+      "MS",
+      "Montserrat"
+    ],
+    "lat": 16.75,
+    "lon": -62.2
+  },
+  "MT": {
+    "iso3": "MLT",
+    "name": "Malta",
+    "names": [
+      "MT",
+      "Malta",
+      "Repubblika ta' Malta",
+      "Republic of Malta",
+      "República de Malta"
+    ],
+    "lat": 35.83333333,
+    "lon": 14.58333333
+  },
+  "MU": {
+    "iso3": "MUS",
+    "name": "Mauritius",
+    "names": [
+      "MU",
+      "Mauricio",
+      "Mauritius",
+      "Maurício",
+      "Republic of Mauritius",
+      "República das Maurícias",
+      "República de Mauricio",
+      "République de Maurice"
+    ],
+    "lat": -20.28333333,
+    "lon": 57.55
+  },
+  "MV": {
+    "iso3": "MDV",
+    "name": "Maldives",
+    "names": [
+      "Dhivehi Raajjeyge Jumhooriyya",
+      "MV",
+      "Maldivas",
+      "Maldive Islands",
+      "Maldives",
+      "Republic of the Maldives",
+      "República das Maldivas",
+      "República de las Maldivas"
+    ],
+    "lat": 3.25,
+    "lon": 73
+  },
+  "MW": {
+    "iso3": "MWI",
+    "name": "Malawi",
+    "names": [
+      "MW",
+      "Malawi",
+      "Republic of Malawi",
+      "República de Malawi",
+      "República do Malawi"
+    ],
+    "lat": -13.17284,
+    "lon": 34.19361
+  },
+  "MX": {
+    "iso3": "MEX",
+    "name": "Mexico",
+    "names": [
+      "Estados Unidos Mexicanos",
+      "MX",
+      "Mexicanos",
+      "Mexico",
+      "México",
+      "United Mexican States"
+    ],
+    "lat": 23.93537,
+    "lon": -102.57635
+  },
+  "MY": {
+    "iso3": "MYS",
+    "name": "Malaysia",
+    "names": [
+      "MY",
+      "Malasia",
+      "Malaysia",
+      "Malásia"
+    ],
+    "lat": 3.72559,
+    "lon": 109.69815
+  },
+  "MZ": {
+    "iso3": "MOZ",
+    "name": "Mozambique",
+    "names": [
+      "MZ",
+      "Mozambique",
+      "Moçambique",
+      "Republic of Mozambique",
+      "República de Mozambique",
+      "República de Moçambique"
+    ],
+    "lat": -17.23045,
+    "lon": 35.47262
+  },
+  "NA": {
+    "iso3": "NAM",
+    "name": "Namibia",
+    "names": [
+      "NA",
+      "Namibia",
+      "Namibië",
+      "Namíbia",
+      "Republic of Namibia",
+      "República da Namíbia",
+      "República de Namibia"
+    ],
+    "lat": -22.09978,
+    "lon": 17.15617
+  },
+  "NC": {
+    "iso3": "NCL",
+    "name": "New Caledonia",
+    "names": [
+      "NC",
+      "New Caledonia",
+      "Nova Caledónia",
+      "Nueva Caledonia",
+      "nueva Caledonia"
+    ],
+    "lat": -21.26136,
+    "lon": 165.53447
+  },
+  "NE": {
+    "iso3": "NER",
+    "name": "Niger",
+    "names": [
+      "NE",
+      "Niger",
+      "Nijar",
+      "Níger",
+      "Republic of Niger",
+      "República de Níger",
+      "República do Níger"
+    ],
+    "lat": 17.34555,
+    "lon": 9.32443
+  },
+  "NF": {
+    "iso3": "NFK",
+    "name": "Norfolk Island",
+    "names": [
+      "Ilha Norfolk",
+      "Isla de Norfolk",
+      "NF",
+      "Norfolk Island",
+      "Teratri of Norf'k Ailen",
+      "Territorio de la Isla Norfolk",
+      "Territory of Norfolk Island",
+      "Território da Ilha Norfolk"
+    ],
+    "lat": -29.03333333,
+    "lon": 167.95
+  },
+  "NG": {
+    "iso3": "NGA",
+    "name": "Nigeria",
+    "names": [
+      "Federal Republic of Nigeria",
+      "NG",
+      "Naíjíríà",
+      "Nigeria",
+      "Nigéria",
+      "Nijeriya",
+      "República Federal da Nigéria",
+      "República Federal de Nigeria"
+    ],
+    "lat": 9.54832,
+    "lon": 7.99513
+  },
+  "NI": {
+    "iso3": "NIC",
+    "name": "Nicaragua",
+    "names": [
+      "NI",
+      "Nicaragua",
+      "Nicarágua",
+      "Republic of Nicaragua",
+      "República da Nicarágua",
+      "República de Nicaragua"
+    ],
+    "lat": 12.84819,
+    "lon": -85.02032
+  },
+  "NL": {
+    "iso3": "NLD",
+    "name": "Netherlands",
+    "names": [
+      "Holanda",
+      "Holland",
+      "Kingdom of the Netherlands",
+      "NL",
+      "Nederland",
+      "Netherlands",
+      "Países Bajos",
+      "The Netherlands"
+    ],
+    "lat": 52.2987,
+    "lon": 5.51222
+  },
+  "NO": {
+    "iso3": "NOR",
+    "name": "Norway",
+    "names": [
+      "Kingdom of Norway",
+      "Kongeriket Noreg",
+      "Kongeriket Norge",
+      "NO",
+      "Noreg",
+      "Norge",
+      "Noruega",
+      "Norway",
+      "Reino da Noruega",
+      "Reino de Noruega"
+    ],
+    "lat": 69.15686,
+    "lon": 15.46812
+  },
+  "NP": {
+    "iso3": "NPL",
+    "name": "Nepal",
+    "names": [
+      "Federal Democratic Republic of Nepal",
+      "Loktāntrik Ganatantra Nepāl",
+      "NP",
+      "Nepal",
+      "República Democrática Federal de Nepal",
+      "República Democrática Federal do Nepal"
+    ],
+    "lat": 28.23944,
+    "lon": 84.01317
+  },
+  "NR": {
+    "iso3": "NRU",
+    "name": "Nauru",
+    "names": [
+      "NR",
+      "Naoero",
+      "Nauru",
+      "Pleasant Island",
+      "Republic of Nauru",
+      "República de Nauru",
+      "Ripublik Naoero"
+    ],
+    "lat": -0.53333333,
+    "lon": 166.91666666
+  },
+  "NU": {
+    "iso3": "NIU",
+    "name": "Niue",
+    "names": [
+      "NU",
+      "Niue"
+    ],
+    "lat": -19.03333333,
+    "lon": -169.86666666
+  },
+  "NZ": {
+    "iso3": "NZL",
+    "name": "New Zealand",
+    "names": [
+      "Aotearoa",
+      "NZ",
+      "New Zealand",
+      "Nova Zelândia",
+      "Nueva Zelanda",
+      "nova Zelândia",
+      "nueva Zelanda"
+    ],
+    "lat": -41.66258,
+    "lon": 172.70193
+  },
+  "OM": {
+    "iso3": "OMN",
+    "name": "Oman",
+    "names": [
+      "OM",
+      "Oman",
+      "Omán",
+      "Omã",
+      "Salṭanat ʻUmān",
+      "Sultanate of Oman",
+      "Sultanato de Omán",
+      "Sultanato de Omã"
+    ],
+    "lat": 20.61117,
+    "lon": 56.09867
+  },
+  "PA": {
+    "iso3": "PAN",
+    "name": "Panama",
+    "names": [
+      "PA",
+      "Panama",
+      "Panamá",
+      "Republic of Panama",
+      "República de Panamá",
+      "República do Panamá"
+    ],
+    "lat": 8.53002,
+    "lon": -80.10916
+  },
+  "PE": {
+    "iso3": "PER",
+    "name": "Peru",
+    "names": [
+      "PE",
+      "Peru",
+      "Perú",
+      "Republic of Peru",
+      "República de Perú",
+      "República del Perú",
+      "República do Peru"
+    ],
+    "lat": -9.19156,
+    "lon": -74.39181
+  },
+  "PF": {
+    "iso3": "PYF",
+    "name": "French Polynesia",
+    "names": [
+      "French Polynesia",
+      "PF",
+      "Polinesia Francesa",
+      "Polinesia francés",
+      "Polinésia Francesa",
+      "Polynésie française",
+      "Pōrīnetia Farāni"
+    ],
+    "lat": -15,
+    "lon": -140
+  },
+  "PG": {
+    "iso3": "PNG",
+    "name": "Papua New Guinea",
+    "names": [
+      "Estado Independente da Papua Nova Guiné",
+      "Estado Independiente de Papúa Nueva Guinea",
+      "Independen Stet bilong Papua Niugini",
+      "Independent State of Papua New Guinea",
+      "PG",
+      "Papua New Guinea",
+      "Papua Nova Guiné",
+      "Papúa Nueva Guinea"
+    ],
+    "lat": -6.45164,
+    "lon": 145.31757
+  },
+  "PH": {
+    "iso3": "PHL",
+    "name": "Philippines",
+    "names": [
+      "Filipinas",
+      "PH",
+      "Philippines",
+      "Republic of the Philippines",
+      "República das Filipinas",
+      "República de las Filipinas",
+      "Repúblika ng Pilipinas"
+    ],
+    "lat": 11.7638,
+    "lon": 122.90267
+  },
+  "PK": {
+    "iso3": "PAK",
+    "name": "Pakistan",
+    "names": [
+      "Islamic Republic of Pakistan",
+      "Islāmī Jumhūriya'eh Pākistān",
+      "PK",
+      "Pakistan",
+      "Pakistán",
+      "Paquistão",
+      "Pākistān",
+      "República Islámica de Pakistán",
+      "República Islâmica do Paquistão"
+    ],
+    "lat": 29.97346,
+    "lon": 69.414
+  },
+  "PL": {
+    "iso3": "POL",
+    "name": "Poland",
+    "names": [
+      "PL",
+      "Poland",
+      "Polonia",
+      "Polónia",
+      "Republic of Poland",
+      "República da Polónia",
+      "República de Polonia",
+      "Rzeczpospolita Polska"
+    ],
+    "lat": 52.14826,
+    "lon": 19.31101
+  },
+  "PM": {
+    "iso3": "SPM",
+    "name": "Saint Pierre and Miquelon",
+    "names": [
+      "Collectivité territoriale de Saint-Pierre-et-Miquelon",
+      "PM",
+      "Saint Pierre and Miquelon",
+      "Saint Pierre e Miquelon",
+      "Saint-Pierre e Miquelon",
+      "San Pedro y Miquelón"
+    ],
+    "lat": 46.83333333,
+    "lon": -56.33333333
+  },
+  "PN": {
+    "iso3": "PCN",
+    "name": "Pitcairn Islands",
+    "names": [
+      "Grupo de Islas Pitcairn",
+      "Ilhas Pitcairn",
+      "Islas Pitcairn",
+      "PN",
+      "Pitcairn",
+      "Pitcairn Group of Islands",
+      "Pitcairn Henderson Ducie and Oeno Islands",
+      "Pitcairn Islands",
+      "Pitcairn grupo de ilhas"
+    ],
+    "lat": -25.06666666,
+    "lon": -130.1
+  },
+  "PR": {
+    "iso3": "PRI",
+    "name": "Puerto Rico",
+    "names": [
+      "Asociado de Puerto Rico",
+      "Commonwealth of Puerto Rico",
+      "Estado Libre Asociado de Puerto Rico",
+      "PR",
+      "Porto Rico",
+      "Puerto Rico"
+    ],
+    "lat": 18.23722,
+    "lon": -66.47922
+  },
+  "PS": {
+    "iso3": "PSE",
+    "name": "Palestine",
+    "names": [
+      "Dawlat Filasṭin",
+      "Estado da Palestina",
+      "Estado de Palestina",
+      "PS",
+      "Palestina",
+      "Palestine",
+      "Palestine, State of",
+      "State of Palestine"
+    ],
+    "lat": 31.94114,
+    "lon": 35.27332
+  },
+  "PT": {
+    "iso3": "PRT",
+    "name": "Portugal",
+    "names": [
+      "PT",
+      "Portugal",
+      "Portuguesa",
+      "Portuguese Republic",
+      "República Portuguesa",
+      "República português"
+    ],
+    "lat": 39.63405,
+    "lon": -8.05577
+  },
+  "PW": {
+    "iso3": "PLW",
+    "name": "Palau",
+    "names": [
+      "Beluu er a Belau",
+      "PW",
+      "Palau",
+      "Republic of Palau",
+      "República de Palau"
+    ],
+    "lat": 7.5,
+    "lon": 134.5
+  },
+  "PY": {
+    "iso3": "PRY",
+    "name": "Paraguay",
+    "names": [
+      "PY",
+      "Paraguai",
+      "Paraguay",
+      "Republic of Paraguay",
+      "República de Paraguay",
+      "República del Paraguay",
+      "República do Paraguai",
+      "Tetã Paraguái"
+    ],
+    "lat": -23.24804,
+    "lon": -58.38739
+  },
+  "QA": {
+    "iso3": "QAT",
+    "name": "Qatar",
+    "names": [
+      "Catar",
+      "Dawlat Qaṭar",
+      "Estado de Qatar",
+      "Estado do Qatar",
+      "QA",
+      "Qatar",
+      "State of Qatar"
+    ],
+    "lat": 25.32185,
+    "lon": 51.1835
+  },
+  "RE": {
+    "iso3": "REU",
+    "name": "Réunion",
+    "names": [
+      "Ilha da Reunião",
+      "Isla de la Reunión",
+      "RE",
+      "Reunion",
+      "Reunião",
+      "Reunión",
+      "Réunion",
+      "Réunion Island"
+    ],
+    "lat": -21.15,
+    "lon": 55.5
+  },
+  "RO": {
+    "iso3": "ROU",
+    "name": "Romania",
+    "names": [
+      "RO",
+      "Romania",
+      "România",
+      "Roménia",
+      "Romênia",
+      "Roumania",
+      "Rumania"
+    ],
+    "lat": 45.8571,
+    "lon": 24.94325
+  },
+  "RS": {
+    "iso3": "SRB",
+    "name": "Serbia",
+    "names": [
+      "RS",
+      "Republic of Serbia",
+      "Republika Srbija",
+      "República da Sérvia",
+      "República de Serbia",
+      "Serbia",
+      "Srbija",
+      "Sérvia",
+      "Република Србија",
+      "Србија"
+    ],
+    "lat": 44.23304,
+    "lon": 20.81965
+  },
+  "RU": {
+    "iso3": "RUS",
+    "name": "Russia",
+    "names": [
+      "Federación de Rusia",
+      "Federação Russa",
+      "RU",
+      "Rusia",
+      "Russia",
+      "Russian Federation",
+      "Rússia",
+      "Российская Федерация"
+    ],
+    "lat": 61.96166,
+    "lon": 99.72101
+  },
+  "RW": {
+    "iso3": "RWA",
+    "name": "Rwanda",
+    "names": [
+      "RW",
+      "Republic of Rwanda",
+      "Repubulika y'u Rwanda",
+      "República de Rwanda",
+      "República do Ruanda",
+      "Ruanda",
+      "Rwanda",
+      "République du Rwanda"
+    ],
+    "lat": -2.01351,
+    "lon": 29.91896
+  },
+  "SA": {
+    "iso3": "SAU",
+    "name": "Saudi Arabia",
+    "names": [
+      "Al-Mamlakah al-‘Arabiyyah as-Su‘ūdiyyah",
+      "Arabia Saudí",
+      "Arábia Saudita",
+      "Kingdom of Saudi Arabia",
+      "Reino da Arábia Saudita",
+      "Reino de Arabia Saudita",
+      "SA",
+      "Saudi",
+      "Saudi Arabia"
+    ],
+    "lat": 24.12329,
+    "lon": 44.51636
+  },
+  "SB": {
+    "iso3": "SLB",
+    "name": "Solomon Islands",
+    "names": [
+      "Ilhas Salomão",
+      "Islas Salomón",
+      "SB",
+      "Solomon Islands",
+      "islas Salomón"
+    ],
+    "lat": -8.8525,
+    "lon": 159.96662
+  },
+  "SC": {
+    "iso3": "SYC",
+    "name": "Seychelles",
+    "names": [
+      "Repiblik Sesel",
+      "Republic of Seychelles",
+      "República das Seychelles",
+      "República de las Seychelles",
+      "République des Seychelles",
+      "SC",
+      "Seicheles",
+      "Seychelles"
+    ],
+    "lat": -4.58333333,
+    "lon": 55.66666666
+  },
+  "SD": {
+    "iso3": "SDN",
+    "name": "Sudan",
+    "names": [
+      "Jumhūrīyat as-Sūdān",
+      "Republic of the Sudan",
+      "República de Sudán",
+      "República do Sudão",
+      "SD",
+      "Sudan",
+      "Sudán",
+      "Sudão"
+    ],
+    "lat": 15.99058,
+    "lon": 29.8626
+  },
+  "SE": {
+    "iso3": "SWE",
+    "name": "Sweden",
+    "names": [
+      "Kingdom of Sweden",
+      "Konungariket Sverige",
+      "Reino da Suécia",
+      "Reino de Suecia",
+      "SE",
+      "Suecia",
+      "Suécia",
+      "Sweden"
+    ],
+    "lat": 62.81149,
+    "lon": 16.59627
+  },
+  "SG": {
+    "iso3": "SGP",
+    "name": "Singapore",
+    "names": [
+      "Republic of Singapore",
+      "Republik Singapura",
+      "República de Singapur",
+      "República de Singapura",
+      "SG",
+      "Singapore",
+      "Singapur",
+      "Singapura",
+      "新加坡共和国"
+    ],
+    "lat": 1.36666666,
+    "lon": 103.8
+  },
+  "SH": {
+    "iso3": "SHN",
+    "name": "Saint Helena, Ascension and Tristan da Cunha",
+    "names": [
+      "Saint Helena",
+      "Saint Helena, Ascension and Tristan da Cunha",
+      "Santa Elena, Ascensión y Tristán de Acuña",
+      "Santa Helena, Ascensão e Tristão da Cunha",
+      "St. Helena, Ascension and Tristan da Cunha"
+    ],
+    "lat": -15.95,
+    "lon": -5.72
+  },
+  "SI": {
+    "iso3": "SVN",
+    "name": "Slovenia",
+    "names": [
+      "Eslovenia",
+      "Eslovénia",
+      "Republic of Slovenia",
+      "Republika Slovenija",
+      "República da Eslovénia",
+      "República de Eslovenia",
+      "SI",
+      "Slovenia"
+    ],
+    "lat": 46.12542,
+    "lon": 14.93815
+  },
+  "SJ": {
+    "iso3": "SJM",
+    "name": "Svalbard and Jan Mayen",
+    "names": [
+      "Ilhas Svalbard e Jan Mayen",
+      "Islas Svalbard y Jan Mayen",
+      "SJ",
+      "Svalbard and Jan Mayen",
+      "Svalbard and Jan Mayen Islands",
+      "Svalbard og Jan Mayen"
+    ],
+    "lat": 78,
+    "lon": 20
+  },
+  "SK": {
+    "iso3": "SVK",
+    "name": "Slovakia",
+    "names": [
+      "Eslovaquia",
+      "Eslováquia",
+      "República Eslovaca",
+      "SK",
+      "Slovak Republic",
+      "Slovakia",
+      "Slovenská republika"
+    ],
+    "lat": 48.72671,
+    "lon": 19.50766
+  },
+  "SL": {
+    "iso3": "SLE",
+    "name": "Sierra Leone",
+    "names": [
+      "Republic of Sierra Leone",
+      "República da Serra Leoa",
+      "República de Sierra Leona",
+      "SL",
+      "Serra Leoa",
+      "Sierra Leone"
+    ],
+    "lat": 8.53035,
+    "lon": -11.79526
+  },
+  "SM": {
+    "iso3": "SMR",
+    "name": "San Marino",
+    "names": [
+      "Most Serene Republic of San Marino",
+      "Repubblica di San Marino",
+      "Republic of San Marino",
+      "SM",
+      "San Marino",
+      "Serenísima República de San Marino",
+      "Sereníssima República de San Marino"
+    ],
+    "lat": 43.76666666,
+    "lon": 12.41666666
+  },
+  "SN": {
+    "iso3": "SEN",
+    "name": "Senegal",
+    "names": [
+      "Republic of Senegal",
+      "República de Senegal",
+      "República do Senegal",
+      "République du Sénégal",
+      "SN",
+      "Senegal"
+    ],
+    "lat": 14.35414,
+    "lon": -14.5098
+  },
+  "SO": {
+    "iso3": "SOM",
+    "name": "Somalia",
+    "names": [
+      "Federal Republic of Somalia",
+      "Jamhuuriyadda Federaalka Soomaaliya",
+      "Jumhūriyyat aṣ-Ṣūmāl al-Fiderāliyya",
+      "República Federal da Somália",
+      "República Federal de Somalia",
+      "SO",
+      "Somalia",
+      "Somália",
+      "aṣ-Ṣūmāl"
+    ],
+    "lat": 4.75235,
+    "lon": 45.7267
+  },
+  "SR": {
+    "iso3": "SUR",
+    "name": "Suriname",
+    "names": [
+      "Republic of Suriname",
+      "Republiek Suriname",
+      "República de Suriname",
+      "República do Suriname",
+      "SR",
+      "Sarnam",
+      "Sranangron",
+      "Surinam",
+      "Suriname"
+    ],
+    "lat": 4.12001,
+    "lon": -55.91146
+  },
+  "SS": {
+    "iso3": "SSD",
+    "name": "South Sudan",
+    "names": [
+      "Republic of South Sudan",
+      "República de Sudán del Sur",
+      "República do Sudão do Sul",
+      "SS",
+      "South Sudan",
+      "Sudán del Sur",
+      "Sudão do Sul"
+    ],
+    "lat": 7.29289,
+    "lon": 30.19862
+  },
+  "ST": {
+    "iso3": "STP",
+    "name": "São Tomé and Príncipe",
+    "names": [
+      "Democratic Republic of São Tomé and Príncipe",
+      "República Democrática de Santo Tomé y Príncipe",
+      "República Democrática de São Tomé e Príncipe",
+      "ST",
+      "Santo Tomé y Príncipe",
+      "Sao Tome and Principe",
+      "São Tomé and Príncipe",
+      "São Tomé e Príncipe"
+    ],
+    "lat": 1,
+    "lon": 7
+  },
+  "SV": {
+    "iso3": "SLV",
+    "name": "El Salvador",
+    "names": [
+      "El Salvador",
+      "Republic of El Salvador",
+      "República de El Salvador",
+      "SV"
+    ],
+    "lat": 13.72609,
+    "lon": -88.8729
+  },
+  "SX": {
+    "iso3": "SXM",
+    "name": "Sint Maarten",
+    "names": [
+      "SX",
+      "Sint Maarten",
+      "Sint Maarten (Dutch part)",
+      "São Martinho"
+    ],
+    "lat": 18.033333,
+    "lon": -63.05
+  },
+  "SY": {
+    "iso3": "SYR",
+    "name": "Syria",
+    "names": [
+      "Al-Jumhūrīyah Al-ʻArabīyah As-Sūrīyah",
+      "República Árabe Siria",
+      "República Árabe Síria",
+      "SY",
+      "Siria",
+      "Syria",
+      "Syrian Arab Republic",
+      "Síria"
+    ],
+    "lat": 35.01261,
+    "lon": 38.54424
+  },
+  "SZ": {
+    "iso3": "SWZ",
+    "name": "Eswatini",
+    "names": [
+      "Essuatíni",
+      "Esuatini",
+      "Eswatini",
+      "Kingdom of Eswatini",
+      "Ngwane",
+      "Reino de eSwatini",
+      "SZ",
+      "Swatini",
+      "Swaziland",
+      "Umbuso weSwatini",
+      "weSwatini"
+    ],
+    "lat": -26.48986,
+    "lon": 31.39526
+  },
+  "TC": {
+    "iso3": "TCA",
+    "name": "Turks and Caicos Islands",
+    "names": [
+      "Ilhas Turks e Caicos",
+      "Islas Turcas y Caicos",
+      "Islas Turks y Caicos",
+      "TC",
+      "Turks and Caicos Islands"
+    ],
+    "lat": 21.75,
+    "lon": -71.58333333
+  },
+  "TD": {
+    "iso3": "TCD",
+    "name": "Chad",
+    "names": [
+      "Chad",
+      "Chade",
+      "Republic of Chad",
+      "República de Chad",
+      "República do Chade",
+      "République du Tchad",
+      "TD",
+      "Tchad"
+    ],
+    "lat": 15.32887,
+    "lon": 18.58133
+  },
+  "TF": {
+    "iso3": "ATF",
+    "name": "French Southern and Antarctic Lands",
+    "names": [
+      "French Southern Territories",
+      "French Southern and Antarctic Lands",
+      "TF",
+      "Terras Austrais e Antárticas Francesas",
+      "Territorio del Francés Tierras australes y antárticas",
+      "Territory of the French Southern and Antarctic Lands",
+      "Território do Sul e Antártica Francesa",
+      "Tierras Australes y Antárticas Francesas"
+    ],
+    "lat": -49.30645,
+    "lon": 69.53158
+  },
+  "TG": {
+    "iso3": "TGO",
+    "name": "Togo",
+    "names": [
+      "República de Togo",
+      "República do Togo",
+      "République Togolaise",
+      "TG",
+      "Togo",
+      "Togolese",
+      "Togolese Republic"
+    ],
+    "lat": 8.43954,
+    "lon": 0.9964
+  },
+  "TH": {
+    "iso3": "THA",
+    "name": "Thailand",
+    "names": [
+      "Kingdom of Thailand",
+      "Prathet",
+      "Ratcha Anachak Thai",
+      "Reino da Tailândia",
+      "Reino de Tailandia",
+      "TH",
+      "Tailandia",
+      "Tailândia",
+      "Thai",
+      "Thailand",
+      "ราชอาณาจักรไทย"
+    ],
+    "lat": 15.01698,
+    "lon": 101.00613
+  },
+  "TJ": {
+    "iso3": "TJK",
+    "name": "Tajikistan",
+    "names": [
+      "Republic of Tajikistan",
+      "República de Tayikistán",
+      "República do Tajiquistão",
+      "TJ",
+      "Tajikistan",
+      "Tajiquistão",
+      "Tayikistán",
+      "Toçikiston",
+      "Çumhuriyi Toçikiston",
+      "Ҷумҳурии Тоҷикистон"
+    ],
+    "lat": 38.58308,
+    "lon": 71.03444
+  },
+  "TK": {
+    "iso3": "TKL",
+    "name": "Tokelau",
+    "names": [
+      "Islas Tokelau",
+      "TK",
+      "Tokelau"
+    ],
+    "lat": -9,
+    "lon": -172
+  },
+  "TL": {
+    "iso3": "TLS",
+    "name": "Timor-Leste",
+    "names": [
+      "Democratic Republic of Timor-Leste",
+      "East Timor",
+      "República Democrática de Timor-Leste",
+      "Repúblika Demokrátika Timór-Leste",
+      "TL",
+      "Timor",
+      "Timor Lorosae",
+      "Timor Oriental",
+      "Timor-Leste",
+      "Timór Lorosa'e"
+    ],
+    "lat": -8.76776,
+    "lon": 125.9663
+  },
+  "TM": {
+    "iso3": "TKM",
+    "name": "Turkmenistan",
+    "names": [
+      "TM",
+      "Turcomenistão",
+      "Turkmenistan",
+      "Turkmenistán",
+      "Turquemenistão"
+    ],
+    "lat": 39.09124,
+    "lon": 59.27543
+  },
+  "TN": {
+    "iso3": "TUN",
+    "name": "Tunisia",
+    "names": [
+      "Republic of Tunisia",
+      "República da Tunísia",
+      "República de Túnez",
+      "TN",
+      "Tunisia",
+      "Tunisian Republic",
+      "Tunísia",
+      "Túnez",
+      "al-Jumhūriyyah at-Tūnisiyyah"
+    ],
+    "lat": 34.17294,
+    "lon": 9.53472
+  },
+  "TO": {
+    "iso3": "TON",
+    "name": "Tonga",
+    "names": [
+      "Kingdom of Tonga",
+      "Reino de Tonga",
+      "TO",
+      "Tonga"
+    ],
+    "lat": -20,
+    "lon": -175
+  },
+  "TR": {
+    "iso3": "TUR",
+    "name": "Türkiye",
+    "names": [
+      "Republic of Turkey",
+      "Republic of Türkiye",
+      "República da Turquia",
+      "República de Turquía",
+      "TR",
+      "Turkiye",
+      "Turquia",
+      "Turquía",
+      "Türkiye",
+      "Türkiye Cumhuriyeti"
+    ],
+    "lat": 39.06837,
+    "lon": 35.1169
+  },
+  "TT": {
+    "iso3": "TTO",
+    "name": "Trinidad and Tobago",
+    "names": [
+      "Republic of Trinidad and Tobago",
+      "República de Trinidad e Tobago",
+      "República de Trinidad y Tobago",
+      "TT",
+      "Trinidad and Tobago",
+      "Trinidad y Tobago",
+      "Trinidade e Tobago"
+    ],
+    "lat": 10.42824,
+    "lon": -61.33037
+  },
+  "TV": {
+    "iso3": "TUV",
+    "name": "Tuvalu",
+    "names": [
+      "TV",
+      "Tuvalu"
+    ],
+    "lat": -8,
+    "lon": 178
+  },
+  "TW": {
+    "iso3": "TWN",
+    "name": "Taiwan",
+    "names": [
+      "Chinese Taipei",
+      "Ilha Formosa",
+      "Republic of China",
+      "Republic of China (Taiwan)",
+      "República da China",
+      "República de China en Taiwán",
+      "TW",
+      "Taiwan",
+      "Taiwán",
+      "Táiwān",
+      "Zhōnghuá Mínguó",
+      "中華民國"
+    ],
+    "lat": 23.5,
+    "lon": 121
+  },
+  "TZ": {
+    "iso3": "TZA",
+    "name": "Tanzania",
+    "names": [
+      "Jamhuri ya Muungano wa Tanzania",
+      "República Unida da Tanzânia",
+      "República Unida de Tanzania",
+      "TZ",
+      "Tanzania",
+      "Tanzania, United Republic of",
+      "Tanzânia",
+      "United Republic of Tanzania"
+    ],
+    "lat": -6.25773,
+    "lon": 34.75299
+  },
+  "UA": {
+    "iso3": "UKR",
+    "name": "Ukraine",
+    "names": [
+      "UA",
+      "Ucrania",
+      "Ucrânia",
+      "Ukraine",
+      "Ukrayina"
+    ],
+    "lat": 49.14882,
+    "lon": 31.22912
+  },
+  "UG": {
+    "iso3": "UGA",
+    "name": "Uganda",
+    "names": [
+      "Jamhuri ya Uganda",
+      "Republic of Uganda",
+      "República de Uganda",
+      "República do Uganda",
+      "UG",
+      "Uganda"
+    ],
+    "lat": 1.29549,
+    "lon": 32.35755
+  },
+  "UM": {
+    "iso3": "UMI",
+    "name": "United States Minor Outlying Islands",
+    "names": [
+      "Estados Unidos Ilhas Menores Distantes",
+      "Estados Unidos Islas menores alejadas de",
+      "Ilhas Menores Distantes dos Estados Unidos",
+      "Islas Ultramarinas Menores de Estados Unidos",
+      "UM",
+      "United States Minor Outlying Islands"
+    ],
+    "lat": 19.3,
+    "lon": 166.633333
+  },
+  "US": {
+    "iso3": "USA",
+    "name": "United States",
+    "names": [
+      "Estados Unidos",
+      "Estados Unidos da América",
+      "Estados Unidos de América",
+      "US",
+      "USA",
+      "United States",
+      "United States of America"
+    ],
+    "lat": 45.70563,
+    "lon": -112.59944
+  },
+  "UY": {
+    "iso3": "URY",
+    "name": "Uruguay",
+    "names": [
+      "Oriental Republic of Uruguay",
+      "República Oriental del Uruguay",
+      "República Oriental do Uruguai",
+      "UY",
+      "Uruguai",
+      "Uruguay"
+    ],
+    "lat": -32.7809,
+    "lon": -56.00328
+  },
+  "UZ": {
+    "iso3": "UZB",
+    "name": "Uzbekistan",
+    "names": [
+      "O‘zbekiston Respublikasi",
+      "Republic of Uzbekistan",
+      "República de Uzbekistán",
+      "República do Usbequistão",
+      "UZ",
+      "Uzbekistan",
+      "Uzbekistán",
+      "Uzbequistão",
+      "Ўзбекистон Республикаси"
+    ],
+    "lat": 41.7486,
+    "lon": 63.20364
+  },
+  "VA": {
+    "iso3": "VAT",
+    "name": "Vatican City",
+    "names": [
+      "Cidade do Vaticano",
+      "Ciudad del Vaticano",
+      "Holy See (Vatican City State)",
+      "Stato della Città del Vaticano",
+      "VA",
+      "Vatican",
+      "Vatican City",
+      "Vatican City State"
+    ],
+    "lat": 41.9,
+    "lon": 12.45
+  },
+  "VC": {
+    "iso3": "VCT",
+    "name": "Saint Vincent and the Grenadines",
+    "names": [
+      "Saint Vincent and the Grenadines",
+      "San Vicente y Granadinas",
+      "San Vicente y las Granadinas",
+      "São Vicente e Granadinas",
+      "São Vincente e Granadinas",
+      "VC"
+    ],
+    "lat": 13.25,
+    "lon": -61.2
+  },
+  "VE": {
+    "iso3": "VEN",
+    "name": "Venezuela",
+    "names": [
+      "Bolivarian Republic of Venezuela",
+      "República Bolivariana da Venezuela",
+      "República Bolivariana de Venezuela",
+      "VE",
+      "Venezuela",
+      "Venezuela, Bolivarian Republic of"
+    ],
+    "lat": 7.16213,
+    "lon": -66.16383
+  },
+  "VG": {
+    "iso3": "VGB",
+    "name": "British Virgin Islands",
+    "names": [
+      "British Virgin Islands",
+      "Ilhas Virgens",
+      "Islas Vírgenes",
+      "Islas Vírgenes del Reino Unido",
+      "VG",
+      "Virgin Islands",
+      "Virgin Islands, British"
+    ],
+    "lat": 18.431383,
+    "lon": -64.62305
+  },
+  "VI": {
+    "iso3": "VIR",
+    "name": "United States Virgin Islands",
+    "names": [
+      "Ilhas Virgens dos Estados Unidos",
+      "Islas Vírgenes de los Estados Unidos",
+      "United States Virgin Islands",
+      "VI",
+      "Virgin Islands of the United States",
+      "Virgin Islands, U.S."
+    ],
+    "lat": 18.35,
+    "lon": -64.933333
+  },
+  "VN": {
+    "iso3": "VNM",
+    "name": "Vietnam",
+    "names": [
+      "Cộng hòa Xã hội chủ nghĩa Việt Nam",
+      "República Socialista de Vietnam",
+      "República Socialista do Vietname",
+      "Socialist Republic of Vietnam",
+      "VN",
+      "Viet Nam",
+      "Vietnam",
+      "Vietname"
+    ],
+    "lat": 16.65794,
+    "lon": 106.28584
+  },
+  "VU": {
+    "iso3": "VUT",
+    "name": "Vanuatu",
+    "names": [
+      "Republic of Vanuatu",
+      "República de Vanuatu",
+      "Ripablik blong Vanuatu",
+      "République de Vanuatu",
+      "VU",
+      "Vanuatu"
+    ],
+    "lat": -15.54268,
+    "lon": 167.07375
+  },
+  "WF": {
+    "iso3": "WLF",
+    "name": "Wallis and Futuna",
+    "names": [
+      "Territoire des îles Wallis et Futuna",
+      "Territorio de las Islas Wallis y Futuna",
+      "Territory of the Wallis and Futuna Islands",
+      "Território das Ilhas Wallis e Futuna",
+      "WF",
+      "Wallis and Futuna",
+      "Wallis e Futuna",
+      "Wallis y Futuna"
+    ],
+    "lat": -13.3,
+    "lon": -176.2
+  },
+  "WS": {
+    "iso3": "WSM",
+    "name": "Samoa",
+    "names": [
+      "Estado Independente de Samoa",
+      "Estado Independiente de Samoa",
+      "Independent State of Samoa",
+      "Malo Saʻoloto Tutoʻatasi o Sāmoa",
+      "Samoa",
+      "WS"
+    ],
+    "lat": -13.58333333,
+    "lon": -172.33333333
+  },
+  "XK": {
+    "iso3": "UNK",
+    "name": "Kosovo",
+    "names": [
+      "Kosovo",
+      "Republic of Kosovo",
+      "República de Kosovo",
+      "República do Kosovo",
+      "XK",
+      "Република Косово"
+    ],
+    "lat": 42.57937,
+    "lon": 20.89536
+  },
+  "YE": {
+    "iso3": "YEM",
+    "name": "Yemen",
+    "names": [
+      "Iémen",
+      "Republic of Yemen",
+      "República de Yemen",
+      "República do Iêmen",
+      "YE",
+      "Yemen",
+      "Yemeni Republic",
+      "al-Jumhūriyyah al-Yamaniyyah"
+    ],
+    "lat": 15.91323,
+    "lon": 47.53504
+  },
+  "YT": {
+    "iso3": "MYT",
+    "name": "Mayotte",
+    "names": [
+      "Departamento de Mayotte",
+      "Department of Mayotte",
+      "Département de Mayotte",
+      "Mayotte",
+      "YT"
+    ],
+    "lat": -12.83333333,
+    "lon": 45.16666666
+  },
+  "ZA": {
+    "iso3": "ZAF",
+    "name": "South Africa",
+    "names": [
+      "RSA",
+      "Republic of South Africa",
+      "República da África do Sul",
+      "República de Sudáfrica",
+      "South Africa",
+      "Sudáfrica",
+      "Suid-Afrika",
+      "ZA",
+      "África do Sul"
+    ],
+    "lat": -28.94703,
+    "lon": 25.04801
+  },
+  "ZM": {
+    "iso3": "ZMB",
+    "name": "Zambia",
+    "names": [
+      "Republic of Zambia",
+      "República da Zâmbia",
+      "República de Zambia",
+      "ZM",
+      "Zambia",
+      "Zâmbia"
+    ],
+    "lat": -13.39507,
+    "lon": 27.72759
+  },
+  "ZW": {
+    "iso3": "ZWE",
+    "name": "Zimbabwe",
+    "names": [
+      "Republic of Zimbabwe",
+      "República de Zimbabue",
+      "República do Zimbabwe",
+      "ZW",
+      "Zimbabue",
+      "Zimbabwe"
+    ],
+    "lat": -18.90699,
+    "lon": 29.78855
+  }
+}
