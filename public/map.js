@@ -28,37 +28,62 @@ export function addDefs(svg) {
   svg.appendChild(defs);
 }
 
-// fillFor(nome) -> cor CSS. Padrão: fundo neutro.
+// fillFor(ISO-2) -> cor CSS. Padrão: fundo neutro.
 export function drawCountries(svg, geojson, fillFor = () => null) {
   const g = document.createElementNS(SVGNS, 'g');
   g.setAttribute('class', 'countries');
   for (const f of geojson.features) {
     const name = f.properties?.NAME || '';
+    const iso = f.properties?.ISO_A2 === '-99' ? f.properties?.ISO_A2_EH : f.properties?.ISO_A2;
     const p = document.createElementNS(SVGNS, 'path');
     p.setAttribute('d', geometryToPath(f.geometry));
     p.setAttribute('data-name', name);
-    const fill = fillFor(name);
+    p.setAttribute('data-country', iso || '');
+    const fill = fillFor(iso);
     if (fill) p.setAttribute('style', `fill:${fill}`);
     g.appendChild(p);
   }
   svg.appendChild(g);
 }
 
-// markers: [{ lat, lon, label, severity: 'alta'|'media'|'baixa', clientes? }]
+// Agrupa por célula de ~2°, mantendo camadas e precisões separadas.
+// Clientes e MW permanecem métricas distintas; não somamos unidades diferentes.
+export function clusterMarkers(markers) {
+  const groups = new Map();
+  const rank = { baixa: 0, media: 1, alta: 2 };
+  for (const m of markers) {
+    const key = `${m.kind}:${m.precisao === 'pais' ? m.country : ''}:${m.precisao === 'pais'}:${Math.floor((m.lon + 180) / 2)}:${Math.floor((m.lat + 90) / 2)}`;
+    let group = groups.get(key);
+    if (!group) {
+      group = { ...m, lat: 0, lon: 0, clientes: 0, mw: 0, severity: 'baixa', count: 0, labels: [] };
+      groups.set(key, group);
+    }
+    group.lat += m.lat; group.lon += m.lon; group.count++;
+    group.clientes += Math.max(0, Number(m.clientes) || 0);
+    group.mw += Math.max(0, Number(m.mw) || 0);
+    group.labels.push(m.label || '');
+    if ((rank[m.severity] ?? 0) > rank[group.severity]) group.severity = m.severity;
+  }
+  return [...groups.values()].map((g) => ({ ...g, lat: g.lat / g.count, lon: g.lon / g.count,
+    label: `${g.count > 1 ? `${g.count} ×\n` : ''}${g.labels.join('\n')}` }));
+}
+
 export function drawMarkers(svg, markers) {
   const g = document.createElementNS(SVGNS, 'g');
   g.setAttribute('class', 'markers');
   g.setAttribute('filter', 'url(#glow)');
-  for (const m of markers) {
+  for (const m of clusterMarkers(markers)) {
     const [x, y] = project([m.lon, m.lat]);
     const c = document.createElementNS(SVGNS, 'circle');
-    const r = m.clientes ? Math.min(14, 4 + Math.log10(m.clientes + 1) * 2) : 5;
+    const metric = m.mw || m.clientes;
+    const r = (metric ? Math.min(14, 4 + Math.log10(metric + 1) * 2) : 5) * (m.precisao === 'pais' ? 0.65 : 1);
     c.setAttribute('cx', x.toFixed(1));
     c.setAttribute('cy', y.toFixed(1));
     c.setAttribute('r', r.toFixed(1));
-    c.setAttribute('class', 'marker ' + (m.severity || 'media'));
+    c.setAttribute('data-count', m.count);
+    c.setAttribute('class', `marker ${m.severity || 'baixa'}${m.precisao === 'pais' ? ' marker-pais' : ''}${m.kind === 'disaster' ? ' marker-disaster' : ''}`);
     const t = document.createElementNS(SVGNS, 'title');
-    t.textContent = m.label || '';
+    t.textContent = m.label;
     c.appendChild(t);
     g.appendChild(c);
   }
