@@ -1,15 +1,17 @@
 import { addDefs, drawCountries, drawMarkers, heatColor } from './map.js';
 
 const T = {
-  pt: { brand: 'Monitor global', share: 'Compartilhar', live: 'Ao vivo', title: 'Incidentes no mundo, com fonte e data', eyebrow: 'Atualizado a partir das fontes oficiais', sumTitle: 'Resumo', tabAll: 'Tudo', tabCyber: 'Ciberataques', tabPower: 'Apagões', mapTitle: 'Mapa de apagões', mapHint: 'Pontos = apagões com localização informada pela fonte. Cor = gravidade; tamanho = clientes afetados. Ciberataques não têm local e aparecem só na lista.', mapEmpty: 'Nenhum apagão com localização ainda. Fontes de apagões pendentes.', feedTitle: 'Lista de incidentes', srcTitle: 'Fontes', navMap: 'Mapa', navList: 'Lista', navSrc: 'Fontes', footer: 'Cada item mostra a fonte original. Itens "a confirmar" ainda não foram verificados por fonte oficial.', kind: { cyber: 'Ciberataque', power: 'Apagão' }, st: { confirmado: 'confirmado', a_confirmar: 'a confirmar', reportado: 'reportado' }, updated: 'Coletado em', none: 'Nenhum item ainda.', fonte: 'Fonte', ransom: 'ligado a ransomware', due: 'prazo de correção', legAlta: 'Alta gravidade', legMedia: 'Média', legBaixa: 'Baixa', legCount: 'Apagões', srcNote: 'CISA KEV (ciberataques, domínio público); ENTSO-E, ONS e ODIN (apagões, pendentes).' },
-  en: { brand: 'Global monitor', share: 'Share', live: 'Live', title: 'Incidents worldwide, with source and date', eyebrow: 'Updated from official sources', sumTitle: 'Summary', tabAll: 'All', tabCyber: 'Cyberattacks', tabPower: 'Blackouts', mapTitle: 'Blackout map', mapHint: 'Dots = outages with a location given by the source. Colour = severity; size = customers affected. Cyberattacks have no location and appear only in the list.', mapEmpty: 'No located blackouts yet. Blackout sources pending.', feedTitle: 'Incident list', srcTitle: 'Sources', navMap: 'Map', navList: 'List', navSrc: 'Sources', footer: 'Each item shows its original source. "To confirm" items are not yet verified by an official source.', kind: { cyber: 'Cyberattack', power: 'Blackout' }, st: { confirmado: 'confirmed', a_confirmar: 'to confirm', reportado: 'reported' }, updated: 'Collected at', none: 'No items yet.', fonte: 'Source', ransom: 'linked to ransomware', due: 'fix due', legAlta: 'High severity', legMedia: 'Medium', legBaixa: 'Low', legCount: 'Blackouts', srcNote: 'CISA KEV (cyber, public domain); ENTSO-E, ONS and ODIN (blackouts, pending).' },
-  es: { brand: 'Monitor global', share: 'Compartir', live: 'En vivo', title: 'Incidentes en el mundo, con fuente y fecha', eyebrow: 'Actualizado desde fuentes oficiales', sumTitle: 'Resumen', tabAll: 'Todo', tabCyber: 'Ciberataques', tabPower: 'Apagones', mapTitle: 'Mapa de apagones', mapHint: 'Puntos = apagones con ubicación informada por la fuente. Color = gravedad; tamaño = clientes afectados. Los ciberataques no tienen ubicación y aparecen solo en la lista.', mapEmpty: 'Aún no hay apagones con ubicación. Fuentes de apagones pendientes.', feedTitle: 'Lista de incidentes', srcTitle: 'Fuentes', navMap: 'Mapa', navList: 'Lista', navSrc: 'Fuentes', footer: 'Cada elemento muestra su fuente original. Los elementos "por confirmar" aún no han sido verificados por una fuente oficial.', kind: { cyber: 'Ciberataque', power: 'Apagón' }, st: { confirmado: 'confirmado', a_confirmar: 'por confirmar', reportado: 'reportado' }, updated: 'Recopilado el', none: 'Aún no hay elementos.', fonte: 'Fuente', ransom: 'vinculado a ransomware', due: 'plazo de corrección', legAlta: 'Gravedad alta', legMedia: 'Media', legBaixa: 'Baja', legCount: 'Apagones', srcNote: 'CISA KEV (ciberataques, dominio público); ENTSO-E, ONS y ODIN (apagones, pendientes).' },
+  pt: { disasters: 'Desastres', brand: 'Monitor global', share: 'Compartilhar', live: 'Ao vivo', title: 'Incidentes no mundo, com fonte e data', eyebrow: 'Atualizado a partir das fontes oficiais', sumTitle: 'Resumo', tabAll: 'Tudo', tabCyber: 'Ciberataques', tabPower: 'Apagões', mapTitle: 'Mapa de apagões', mapHint: 'Pontos agrupados por proximidade. Cor = gravidade; tamanho = MW ou clientes. Pontos menores e suaves = localização aproximada do país. Desastres em roxo são opcionais.', mapEmpty: 'Nenhum apagão localizado nesta coleta. Ative Desastres para ver os eventos naturais disponíveis.', feedTitle: 'Lista de incidentes', srcTitle: 'Fontes', navMap: 'Mapa', navList: 'Lista', navSrc: 'Fontes', footer: 'Cada item mostra a fonte original. Itens "a confirmar" ainda não foram verificados por fonte oficial.', kind: { cyber: 'Ciberataque', power: 'Apagão' }, st: { confirmado: 'confirmado', a_confirmar: 'a confirmar', reportado: 'reportado' }, updated: 'Coletado em', none: 'Nenhum item ainda.', fonte: 'Fonte', ransom: 'ligado a ransomware', due: 'prazo de correção', legAlta: 'Alta gravidade', legMedia: 'Média', legBaixa: 'Baixa', legCount: 'Apagões', srcNote: 'Fontes ativas: CISA KEV, Cloudflare Radar, IODA, ONS, ODIN, GDELT, USGS e GDACS. ENTSO-E ainda pendente.' },
+  en: { disasters: 'Disasters', brand: 'Global monitor', share: 'Share', live: 'Live', title: 'Incidents worldwide, with source and date', eyebrow: 'Updated from official sources', sumTitle: 'Summary', tabAll: 'All', tabCyber: 'Cyberattacks', tabPower: 'Blackouts', mapTitle: 'Blackout map', mapHint: 'Nearby points are grouped. Colour = severity; size = MW or customers. Smaller, faded points = approximate country location. Optional disasters are purple.', mapEmpty: 'No located outages in this collection. Enable Disasters to see available natural events.', feedTitle: 'Incident list', srcTitle: 'Sources', navMap: 'Map', navList: 'List', navSrc: 'Sources', footer: 'Each item shows its original source. "To confirm" items are not yet verified by an official source.', kind: { cyber: 'Cyberattack', power: 'Blackout' }, st: { confirmado: 'confirmed', a_confirmar: 'to confirm', reportado: 'reported' }, updated: 'Collected at', none: 'No items yet.', fonte: 'Source', ransom: 'linked to ransomware', due: 'fix due', legAlta: 'High severity', legMedia: 'Medium', legBaixa: 'Low', legCount: 'Blackouts', srcNote: 'Active sources: CISA KEV, Cloudflare Radar, IODA, ONS, ODIN, GDELT, USGS and GDACS. ENTSO-E still pending.' },
+  es: { disasters: 'Desastres', brand: 'Monitor global', share: 'Compartir', live: 'En vivo', title: 'Incidentes en el mundo, con fuente y fecha', eyebrow: 'Actualizado desde fuentes oficiales', sumTitle: 'Resumen', tabAll: 'Todo', tabCyber: 'Ciberataques', tabPower: 'Apagones', mapTitle: 'Mapa de apagones', mapHint: 'Puntos agrupados por proximidad. Color = gravedad; tamaño = MW o clientes. Puntos pequeños y suaves = ubicación aproximada del país. Desastres opcionales en morado.', mapEmpty: 'No hay apagones localizados en esta recopilación. Active Desastres para ver los eventos naturales disponibles.', feedTitle: 'Lista de incidentes', srcTitle: 'Fuentes', navMap: 'Mapa', navList: 'Lista', navSrc: 'Fuentes', footer: 'Cada elemento muestra su fuente original. Los elementos "por confirmar" aún no han sido verificados por una fuente oficial.', kind: { cyber: 'Ciberataque', power: 'Apagón' }, st: { confirmado: 'confirmado', a_confirmar: 'por confirmar', reportado: 'reportado' }, updated: 'Recopilado el', none: 'Aún no hay elementos.', fonte: 'Fuente', ransom: 'vinculado a ransomware', due: 'plazo de corrección', legAlta: 'Gravedad alta', legMedia: 'Media', legBaixa: 'Baja', legCount: 'Apagones', srcNote: 'Fuentes activas: CISA KEV, Cloudflare Radar, IODA, ONS, ODIN, GDELT, USGS y GDACS. ENTSO-E aún pendiente.' },
 };
 let lang = (navigator.language || 'pt').slice(0, 2);
 if (!T[lang]) lang = 'pt';
 let filter = 'power';
 let data = { items: [], errors: [] };
 let countries = null;
+
+const SOURCE_LINKS = [['CISA KEV', 'https://www.cisa.gov/known-exploited-vulnerabilities-catalog'], ['Cloudflare Radar', 'https://radar.cloudflare.com/outage-center'], ['IODA', 'https://ioda.inetintel.cc.gatech.edu'], ['ONS', 'https://dados.ons.org.br/dataset/interrupcao_carga'], ['ODIN', 'https://odin.ornl.gov'], ['GDELT', 'https://www.gdeltproject.org'], ['USGS', 'https://earthquake.usgs.gov'], ['GDACS', 'https://www.gdacs.org']];
 
 const LOCALE = { pt: 'pt-BR', en: 'en-US', es: 'es-ES' };
 const fmt = (iso) => new Date(iso).toLocaleString(LOCALE[lang], { dateStyle: 'medium', timeStyle: 'short', timeZone: 'UTC' }) + ' UTC';
@@ -20,7 +22,7 @@ function applyI18n() {
   document.querySelectorAll('[data-i18n]').forEach((el) => { el.textContent = T[lang][el.dataset.i18n] ?? el.textContent; });
   document.querySelectorAll('.lang button').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.lang === lang)));
   document.querySelectorAll('.pills button').forEach((b) => b.setAttribute('aria-selected', String(b.dataset.filter === filter)));
-  document.getElementById('srclist').innerHTML = `<li><strong>CISA KEV</strong><br>${esc(T[lang].srcNote)}</li>`;
+  document.getElementById('srclist').innerHTML = SOURCE_LINKS.map(([name, url]) => `<li><a href="${url}" target="_blank" rel="noopener">${esc(name)}</a></li>`).join('') + `<li>${esc(T[lang].srcNote)}</li>`;
 }
 
 function counts() {
@@ -47,9 +49,10 @@ function renderMap() {
   const byCountry = {};
   for (const i of power) if (i.country) byCountry[i.country] = (byCountry[i.country] || 0) + 1;
   const max = Math.max(0, ...Object.values(byCountry));
-  if (countries) drawCountries(svg, countries, (name) => heatColor(byCountry[name], max));
-  const markers = power.filter((i) => Number.isFinite(i.lat) && Number.isFinite(i.lon))
-    .map((i) => ({ lat: i.lat, lon: i.lon, label: i.title, severity: i.severity, clientes: i.clientes }));
+  if (countries) drawCountries(svg, countries, (iso) => heatColor(byCountry[iso], max));
+  const visible = document.getElementById('disasters').checked ? [...power, ...data.items.filter((i) => i.kind === 'disaster')] : power;
+  const markers = visible.filter((i) => Number.isFinite(i.lat) && Number.isFinite(i.lon))
+    .map((i) => ({ ...i, label: `${i.title} · ${i.region} · ${i.source} · ${i.precisao}` }));
   if (markers.length) drawMarkers(svg, markers);
   document.getElementById('maphint').textContent = markers.length ? T[lang].mapHint : T[lang].mapEmpty;
 
@@ -87,6 +90,7 @@ document.querySelectorAll('.pills button').forEach((b) => b.addEventListener('cl
   document.querySelectorAll('.pills button').forEach((x) => x.setAttribute('aria-selected', String(x === b)));
   renderFeed();
 }));
+document.getElementById('disasters').addEventListener('change', renderMap);
 document.getElementById('share').addEventListener('click', async () => {
   const url = location.href;
   try {
@@ -97,7 +101,7 @@ document.getElementById('share').addEventListener('click', async () => {
 
 applyI18n();
 Promise.all([
-  fetch('https://raw.githubusercontent.com/nvkelso/natural-earth-vector/master/geojson/ne_110m_admin_0_countries.geojson').then((r) => r.json()).catch(() => null),
+  fetch('/geo/countries.geojson').then((r) => r.json()).catch(() => null),
   fetch('/api/incidents').then((r) => r.json()),
 ]).then(([geo, d]) => {
   countries = geo;
